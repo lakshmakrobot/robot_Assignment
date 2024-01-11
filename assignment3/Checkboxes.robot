@@ -1,11 +1,13 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    BuiltIn
-Suite Setup    Open Browser    https://the-internet.herokuapp.com/checkboxes    Chrome
+Resource    ../resource/common-function.robot
+Suite Setup    Browser Setup
 Suite Teardown    Close Browser
 
 *** Test Cases ***
 Verify Checkbox Is Checked
+    Go To    https://the-internet.herokuapp.com/checkboxes
     ${checkbox1}=    Set Variable    xpath=//input[@type='checkbox'][1]
     Click Element    ${checkbox1}
     Checkbox Should Be Selected    ${checkbox1}

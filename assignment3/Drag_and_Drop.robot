@@ -1,11 +1,13 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    BuiltIn
-Suite Setup    Open Browser    https://the-internet.herokuapp.com/drag_and_drop    Chrome
+Resource    ../resource/common-function.robot
+Suite Setup    Browser Setup
 Suite Teardown    Close Browser
 
 
 *** Test Cases ***
 Swap Boxs and Take Screenshot
+    Go To    https://the-internet.herokuapp.com/drag_and_drop
     Drag And Drop    id=column-a    id=column-b
     Capture Page Screenshot    screenshot.png

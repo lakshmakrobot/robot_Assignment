@@ -1,8 +1,9 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    ../resource/common-function.robot
+Suite Setup    Browser Setup
 
 *** Variables ***
-${BROWSER}    Chrome
 ${URL}        https://www.google.com/
 ${TextToEnter}    ai will take over the world
 ${GLOBAL_TIMEOUT}    10s
@@ -10,7 +11,7 @@ ${GLOBAL_TIMEOUT}    10s
 
 *** Test Cases ***
 Assert First Link On Google Search
-    Open Browser    ${URL}    ${BROWSER}
+    Go To    ${URL}    
     Input Text      xpath=//textarea[@title='Search']    ${TextToEnter}
     Wait And Click    xpath=//div[@role = 'presentation']//li[@role = 'presentation'][1]
     Wait And Click     xpath=(//*[@id='Odp5De']//a)[1]

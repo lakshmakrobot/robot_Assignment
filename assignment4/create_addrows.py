@@ -24,11 +24,7 @@ if __name__ == "__main__":
     # Specify the file path, sheet name, and rows to append
     file_path = "example.xlsx"
     sheet_name = "Sheet1"
-    new_rows = [
-        ["NewValue1", "NewValue2", "NewValue3"],
-        ["AnotherValue1", "AnotherValue2", "AnotherValue3"],
-        # Add more rows as needed
-    ]
-
+    new_rows = ["NewValue1", "NewValue2", "NewValue3"]
+    # Add more rows as needed
     # Append rows to the existing or newly created XLSX file
     append_rows(file_path, sheet_name, new_rows)

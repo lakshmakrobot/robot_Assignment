@@ -1,12 +1,14 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    BuiltIn
-Suite Setup    Open Browser    https://the-internet.herokuapp.com/add_remove_elements/    Chrome
+Resource    ../resource/common-function.robot
+Suite Setup    Browser Setup
 Suite Teardown    Close Browser
 
 
 *** Test Cases ***
 Add Element twice And Assert
+    Go To    https://the-internet.herokuapp.com/add_remove_elements/
     ${add_button}    Set Variable    //button[text()='Add Element']
 
     FOR    ${index}    IN RANGE    2

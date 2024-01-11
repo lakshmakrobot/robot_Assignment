@@ -2,7 +2,8 @@
 Library    SeleniumLibrary
 Library    BuiltIn
 Library    /home/lakshman_k/rftest/robot_Assignment/assignment4/create_addrows.py
-Suite Setup    Open Browser    https://www.amazon.in/    Chrome
+Resource    ../resource/common-function.robot
+Suite Setup    Browser Setup
 Suite Teardown    Close Browser
 
 *** Variables ***
@@ -14,6 +15,7 @@ ${element_name}    (//span[@class = 'a-size-base-plus a-color-base a-text-normal
 
 *** Test Cases ***
 Search For Iphone with 20000
+    Go To    https://www.amazon.in/
     Click Element    xpath=//a[contains(@href,'/mobile-phones')]
     Click Element    xpath=//li//span[text()='Over ₹20,000']
     Click Element    xpath=//li[@aria-label='Apple']//div
@@ -29,17 +31,3 @@ Get Name Price Ratings
         ${element_rating_text}    Get Text    ${element_rating} [${element_index}]
         append rows    ${xls-file}    ${sheet_name}    ${element_name_text}    ${element_price_text}    ${element_rating_text}
     END
-
-
-
-
-
-        
-
-        
-
-
-    
-
-
-

@@ -1,8 +1,10 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    BuiltIn
+Library    Collections
 Library    /home/lakshman_k/rftest/robot_Assignment/assignment4/create_addrows.py
-Suite Setup    Open Browser    https://www.flipkart.com/    Chrome
+Resource    ../resource/common-function.robot
+Suite Setup    Browser Setup
 Suite Teardown    Close Browser
 
 *** Variables ***
@@ -11,12 +13,15 @@ ${sheet_name}    flipkart
 ${element_price}    (//div[@class='_30jeq3 _1_WHN1'])
 ${element_rating}    (//span[@class='_2_R_DZ']//span/span[contains(text(),'Rating')])
 ${element_name}    (//div[@class='_4rR01T'])
+${hub_url}    127.0.0.1
 
 *** Test Cases ***
 Search For Iphone with 20000
+    Go To    https://www.flipkart.com/
     Click Element    xpath=//span[text()='Mobiles']
     Select From List by Value    (//select[@class ='_2YxCDZ'])[1]    20000
-    Click Element    //div[text()='APPLE']
+    Sleep    2s
+    Click Element    //div[text()='APPLE']/..
     
 
 Get Name Price Ratings
@@ -29,17 +34,3 @@ Get Name Price Ratings
         ${element_rating_text}    Get Text    ${element_rating} [${element_index}]
         append rows    ${xls-file}    ${sheet_name}    ${element_name_text}    ${element_price_text}    ${element_rating_text}
     END
-
-
-
-
-
-        
-
-        
-
-
-    
-
-
-
