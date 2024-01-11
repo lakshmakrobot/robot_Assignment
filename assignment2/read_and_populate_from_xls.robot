@@ -1,12 +1,13 @@
 *** Settings ***
 Library           SeleniumLibrary
-Library           /home/lakshman_k/rftest/robot_Assignment/assignment2/get_row_data.py
-Resource    ../resource/common-function.robot
+Library           ${CURDIR}/../py_resource/get_row_data.py
+Resource    ${CURDIR}${/}../robot_resource/common-function.robot
 Suite Setup    Browser Setup
+Suite Teardown    Close Browser
 *** Variables ***
 ${URL}    https://rpachallenge.com/
 ${GLOBAL_TIMEOUT}  10s
-${file_path}    /home/lakshman_k/rftest/robot_Assignment/assignment2/challenge.xlsx
+${file_path}    ${CURDIR}${/}../data_folder/challenge.xlsx
 ${sheet_name}   Sheet1
 
 

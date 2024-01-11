@@ -1,13 +1,13 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    BuiltIn
-Library    /home/lakshman_k/rftest/robot_Assignment/assignment4/create_addrows.py
-Resource    ../resource/common-function.robot
+Library    ${CURDIR}/../py_resource/create_addrows.py
+Resource    ${CURDIR}${/}../robot_resource/common-function.robot
 Suite Setup    Browser Setup
 Suite Teardown    Close Browser
 
 *** Variables ***
-${xls-file}    /home/lakshman_k/rftest/robot_Assignment/assignment4/iphonedata.xlsx
+${xls-file}    ${CURDIR}${/}../data_folder/iphonedata.xlsx
 ${sheet_name}    amazon
 ${element_price}    (//span[@class = 'a-price-whole'])
 ${element_rating}    (//span[@class = 'a-size-base s-underline-text'])

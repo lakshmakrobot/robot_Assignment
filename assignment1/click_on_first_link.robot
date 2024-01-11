@@ -1,7 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource    ../resource/common-function.robot
+Resource    ${CURDIR}${/}../robot_resource/common-function.robot
 Suite Setup    Browser Setup
+Suite Teardown    Close Browser
 
 *** Variables ***
 ${URL}        https://www.google.com/
