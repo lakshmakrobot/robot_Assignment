@@ -1,0 +1,2364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.10.12 on linux)" generated="20240114 23:57:08.171" rpa="false" schemaversion="4">
+<suite id="s1" name="Assignment5" source="/home/lakshman_k/rftest/robot_Assignment/assignment5">
+<suite id="s1-s1" name="Broken-Images" source="/home/lakshman_k/rftest/robot_Assignment/assignment5/broken-images.robot">
+<kw name="Browser Setup" library="common-function" type="SETUP">
+<kw name="Evaluate" library="BuiltIn">
+<var>${dc}</var>
+<arg>sys.modules['selenium.webdriver'].DesiredCapabilities()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240114 23:57:08.324" level="INFO">${dc} = &lt;selenium.webdriver.common.desired_capabilities.DesiredCapabilities object at 0x7fb8d5e63cd0&gt;</msg>
+<status status="PASS" starttime="20240114 23:57:08.324" endtime="20240114 23:57:08.324"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240114 23:57:08.324" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7fb8d5e63e20&gt;</msg>
+<status status="PASS" starttime="20240114 23:57:08.324" endtime="20240114 23:57:08.324"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--enable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:08.324" endtime="20240114 23:57:08.324"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--window-size\=1360,768</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:08.324" endtime="20240114 23:57:08.325"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:08.325" endtime="20240114 23:57:08.325"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--allow-insecure-localhost</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:08.325" endtime="20240114 23:57:08.325"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--ignore-certificate-errors</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:08.325" endtime="20240114 23:57:08.325"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:08.325" endtime="20240114 23:57:08.325"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:08.325" endtime="20240114 23:57:08.325"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<var>${dc}</var>
+<arg>${chrome_options}</arg>
+<arg>to_capabilities</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20240114 23:57:08.325" level="INFO">${dc} = {'browserName': 'chrome', 'pageLoadStrategy': 'normal', 'goog:chromeOptions': {'extensions': [], 'args': ['--enable-notifications', '--window-size=1360,768', '--start-maximized', '--allow-insecure-loc...</msg>
+<status status="PASS" starttime="20240114 23:57:08.325" endtime="20240114 23:57:08.325"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${selenoid_args}</var>
+<arg>enableVNC=${True}</arg>
+<arg>name=${SUITE NAME}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20240114 23:57:08.326" level="INFO">${selenoid_args} = {'enableVNC': True, 'name': 'Assignment5.Broken-Images'}</msg>
+<status status="PASS" starttime="20240114 23:57:08.325" endtime="20240114 23:57:08.326"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dc}</arg>
+<arg>selenoid:options</arg>
+<arg>${selenoid_args}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20240114 23:57:08.326" endtime="20240114 23:57:08.326"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${dc}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240114 23:57:08.326" level="INFO">{'browserName': 'chrome', 'pageLoadStrategy': 'normal', 'goog:chromeOptions': {'extensions': [], 'args': ['--enable-notifications', '--window-size=1360,768', '--start-maximized', '--allow-insecure-localhost', '--ignore-certificate-errors', '--no-sandbox', '--disable-dev-shm-usage']}, 'selenoid:options': {'enableVNC': True, 'name': 'Assignment5.Broken-Images'}}</msg>
+<status status="PASS" starttime="20240114 23:57:08.326" endtime="20240114 23:57:08.326"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Remote</arg>
+<arg>command_executor=http://${hub_url}:4444/wd/hub</arg>
+<arg>desired_capabilities=${dc}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20240114 23:57:08.326" level="INFO">Creating an instance of the Remote WebDriver.</msg>
+<status status="PASS" starttime="20240114 23:57:08.326" endtime="20240114 23:57:09.039"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20240114 23:57:09.039" endtime="20240114 23:57:09.039"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Maximize Browser Window</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240114 23:57:09.040" endtime="20240114 23:57:09.244"/>
+</kw>
+<status status="PASS" starttime="20240114 23:57:09.039" endtime="20240114 23:57:09.245"/>
+</kw>
+<status status="PASS" starttime="20240114 23:57:08.323" endtime="20240114 23:57:09.245"/>
+</kw>
+<test id="s1-s1-t1" name="Assert Images Are Loaded" line="11">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240114 23:57:09.247" level="INFO">Opening url 'https://the-internet.herokuapp.com/broken_images'</msg>
+<status status="PASS" starttime="20240114 23:57:09.247" endtime="20240114 23:57:12.623"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{img_elements}</var>
+<arg>xpath=//div[@id='content']//img</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20240114 23:57:12.750" level="INFO">@{img_elements} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="4cae805696551c042160c28f3f55fe32", element="4B486774DBF6F5F0FCDA2919BC8704D7_element_7")&gt; | &lt;selenium.webdriver.remote.webelement.WebElemen...</msg>
+<status status="PASS" starttime="20240114 23:57:12.623" endtime="20240114 23:57:12.750"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${img_elements_length}</var>
+<arg>len($img_elements)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240114 23:57:12.757" level="INFO">${img_elements_length} = 3</msg>
+<status status="PASS" starttime="20240114 23:57:12.750" endtime="20240114 23:57:12.757"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>img-session</arg>
+<arg>${url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20240114 23:57:12.758" level="INFO">Creating Session using : alias=img-session, url=https://the-internet.herokuapp.com/broken_images, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20240114 23:57:12.758" endtime="20240114 23:57:12.759"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${element_index}</var>
+<value>1</value>
+<value>${img_elements_length}+1</value>
+<iter>
+<var name="${element_index}">1</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${img src}</var>
+<arg>xpath=//div[@id='content']//img [${element_index}]</arg>
+<arg>src</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20240114 23:57:13.008" level="INFO">${img src} = https://the-internet.herokuapp.com/asdf.jpg</msg>
+<status status="PASS" starttime="20240114 23:57:12.760" endtime="20240114 23:57:13.008"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<var>${response}</var>
+<arg>GET On Session</arg>
+<arg>img-session</arg>
+<arg>${img src}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="GET On Session" library="RequestsLibrary">
+<arg>img-session</arg>
+<arg>${img src}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20240114 23:57:14.204" level="INFO">GET Request : url=https://the-internet.herokuapp.com/asdf.jpg 
+ path_url=/asdf.jpg 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20240114 23:57:14.204" level="INFO">GET Response : url=https://the-internet.herokuapp.com/asdf.jpg 
+ status=404, reason=Not Found 
+ headers={'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1705256834&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=bgyMo1KKn5qjp1hoPFXh6%2BlfAeKEsK7VXjxedTQ8pys%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1705256834&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=bgyMo1KKn5qjp1hoPFXh6%2BlfAeKEsK7VXjxedTQ8pys%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Connection': 'keep-alive', 'Content-Type': 'text/html;charset=utf-8', 'X-Cascade': 'pass', 'Content-Length': '18', 'X-Xss-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'SAMEORIGIN', 'Server': 'WEBrick/1.6.0 (Ruby/2.7.2/2020-10-01)', 'Date': 'Sun, 14 Jan 2024 18:27:14 GMT', 'Set-Cookie': 'rack.session=BAh7CEkiD3Nlc3Npb25faWQGOgZFVEkiRTkxM2Q3MWRjNzJlZTE2NjBkMTI3%0AMTcwNmQwYTA0NTM5MjU1OWIwNTBkMjYxNmQwYzEyMzBjZmY5ZTEwNGEwYWQG%0AOwBGSSIJY3NyZgY7AEZJIiU4ZTg2NDQ2Mjc3Njc3NTM3YmNjY2E4ZDQ2OGZl%0ANjM2NgY7AEZJIg10cmFja2luZwY7AEZ7B0kiFEhUVFBfVVNFUl9BR0VOVAY7%0AAFRJIi04NGEwMjRkMGJlMjgwOWIwZTgwMzkwOTFmODY5YzM0ZWZlN2MzMGUx%0ABjsARkkiGUhUVFBfQUNDRVBUX0xBTkdVQUdFBjsAVEkiLWRhMzlhM2VlNWU2%0AYjRiMGQzMjU1YmZlZjk1NjAxODkwYWZkODA3MDkGOwBG%0A--544360da477b1fd74efeaed082017f5b0a7396c2; path=/; HttpOnly', 'Via': '1.1 vegur'} 
+ body=&lt;h1&gt;Not Found&lt;/h1&gt; 
+ </msg>
+<msg timestamp="20240114 23:57:14.204" level="INFO">/usr/lib/python3/dist-packages/urllib3/connectionpool.py:1020: InsecureRequestWarning: Unverified HTTPS request is being made to host 'the-internet.herokuapp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20240114 23:57:14.205" level="FAIL">HTTPError: 404 Client Error: Not Found for url: https://the-internet.herokuapp.com/asdf.jpg</msg>
+<status status="FAIL" starttime="20240114 23:57:13.009" endtime="20240114 23:57:14.207"/>
+</kw>
+<msg timestamp="20240114 23:57:14.207" level="INFO">${response} = ('FAIL', 'HTTPError: 404 Client Error: Not Found for url: https://the-internet.herokuapp.com/asdf.jpg')</msg>
+<status status="PASS" starttime="20240114 23:57:13.008" endtime="20240114 23:57:14.207"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Be Equal</arg>
+<arg>${response}[0]</arg>
+<arg>PASS</arg>
+<arg>Image is rendered</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${response}[0]</arg>
+<arg>PASS</arg>
+<arg>Image is rendered</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<msg timestamp="20240114 23:57:14.208" level="FAIL">Image is rendered: FAIL != PASS</msg>
+<status status="FAIL" starttime="20240114 23:57:14.207" endtime="20240114 23:57:14.208"/>
+</kw>
+<status status="FAIL" starttime="20240114 23:57:14.207" endtime="20240114 23:57:14.208"/>
+</kw>
+<status status="FAIL" starttime="20240114 23:57:12.759" endtime="20240114 23:57:14.208"/>
+</iter>
+<iter>
+<var name="${element_index}">2</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${img src}</var>
+<arg>xpath=//div[@id='content']//img [${element_index}]</arg>
+<arg>src</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20240114 23:57:14.428" level="INFO">${img src} = https://the-internet.herokuapp.com/hjkl.jpg</msg>
+<status status="PASS" starttime="20240114 23:57:14.208" endtime="20240114 23:57:14.428"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<var>${response}</var>
+<arg>GET On Session</arg>
+<arg>img-session</arg>
+<arg>${img src}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="GET On Session" library="RequestsLibrary">
+<arg>img-session</arg>
+<arg>${img src}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20240114 23:57:14.680" level="INFO">GET Request : url=https://the-internet.herokuapp.com/hjkl.jpg 
+ path_url=/hjkl.jpg 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'rack.session=BAh7CEkiD3Nlc3Npb25faWQGOgZFVEkiRTkxM2Q3MWRjNzJlZTE2NjBkMTI3%0AMTcwNmQwYTA0NTM5MjU1OWIwNTBkMjYxNmQwYzEyMzBjZmY5ZTEwNGEwYWQG%0AOwBGSSIJY3NyZgY7AEZJIiU4ZTg2NDQ2Mjc3Njc3NTM3YmNjY2E4ZDQ2OGZl%0ANjM2NgY7AEZJIg10cmFja2luZwY7AEZ7B0kiFEhUVFBfVVNFUl9BR0VOVAY7%0AAFRJIi04NGEwMjRkMGJlMjgwOWIwZTgwMzkwOTFmODY5YzM0ZWZlN2MzMGUx%0ABjsARkkiGUhUVFBfQUNDRVBUX0xBTkdVQUdFBjsAVEkiLWRhMzlhM2VlNWU2%0AYjRiMGQzMjU1YmZlZjk1NjAxODkwYWZkODA3MDkGOwBG%0A--544360da477b1fd74efeaed082017f5b0a7396c2'} 
+ body=None 
+ </msg>
+<msg timestamp="20240114 23:57:14.681" level="INFO">GET Response : url=https://the-internet.herokuapp.com/hjkl.jpg 
+ status=404, reason=Not Found 
+ headers={'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1705256834&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=bgyMo1KKn5qjp1hoPFXh6%2BlfAeKEsK7VXjxedTQ8pys%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1705256834&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=bgyMo1KKn5qjp1hoPFXh6%2BlfAeKEsK7VXjxedTQ8pys%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Connection': 'keep-alive', 'Content-Type': 'text/html;charset=utf-8', 'X-Cascade': 'pass', 'Content-Length': '18', 'X-Xss-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'SAMEORIGIN', 'Server': 'WEBrick/1.6.0 (Ruby/2.7.2/2020-10-01)', 'Date': 'Sun, 14 Jan 2024 18:27:14 GMT', 'Via': '1.1 vegur'} 
+ body=&lt;h1&gt;Not Found&lt;/h1&gt; 
+ </msg>
+<msg timestamp="20240114 23:57:14.681" level="INFO">/usr/lib/python3/dist-packages/urllib3/connectionpool.py:1020: InsecureRequestWarning: Unverified HTTPS request is being made to host 'the-internet.herokuapp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20240114 23:57:14.681" level="FAIL">HTTPError: 404 Client Error: Not Found for url: https://the-internet.herokuapp.com/hjkl.jpg</msg>
+<status status="FAIL" starttime="20240114 23:57:14.428" endtime="20240114 23:57:14.681"/>
+</kw>
+<msg timestamp="20240114 23:57:14.682" level="INFO">${response} = ('FAIL', 'HTTPError: 404 Client Error: Not Found for url: https://the-internet.herokuapp.com/hjkl.jpg')</msg>
+<status status="PASS" starttime="20240114 23:57:14.428" endtime="20240114 23:57:14.682"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Be Equal</arg>
+<arg>${response}[0]</arg>
+<arg>PASS</arg>
+<arg>Image is rendered</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${response}[0]</arg>
+<arg>PASS</arg>
+<arg>Image is rendered</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<msg timestamp="20240114 23:57:14.683" level="FAIL">Image is rendered: FAIL != PASS</msg>
+<status status="FAIL" starttime="20240114 23:57:14.682" endtime="20240114 23:57:14.683"/>
+</kw>
+<status status="FAIL" starttime="20240114 23:57:14.682" endtime="20240114 23:57:14.683"/>
+</kw>
+<status status="FAIL" starttime="20240114 23:57:14.208" endtime="20240114 23:57:14.683"/>
+</iter>
+<iter>
+<var name="${element_index}">3</var>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${img src}</var>
+<arg>xpath=//div[@id='content']//img [${element_index}]</arg>
+<arg>src</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20240114 23:57:14.923" level="INFO">${img src} = https://the-internet.herokuapp.com/img/avatar-blank.jpg</msg>
+<status status="PASS" starttime="20240114 23:57:14.684" endtime="20240114 23:57:14.923"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<var>${response}</var>
+<arg>GET On Session</arg>
+<arg>img-session</arg>
+<arg>${img src}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="GET On Session" library="RequestsLibrary">
+<arg>img-session</arg>
+<arg>${img src}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20240114 23:57:15.192" level="INFO">GET Request : url=https://the-internet.herokuapp.com/img/avatar-blank.jpg 
+ path_url=/img/avatar-blank.jpg 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': 'rack.session=BAh7CEkiD3Nlc3Npb25faWQGOgZFVEkiRTkxM2Q3MWRjNzJlZTE2NjBkMTI3%0AMTcwNmQwYTA0NTM5MjU1OWIwNTBkMjYxNmQwYzEyMzBjZmY5ZTEwNGEwYWQG%0AOwBGSSIJY3NyZgY7AEZJIiU4ZTg2NDQ2Mjc3Njc3NTM3YmNjY2E4ZDQ2OGZl%0ANjM2NgY7AEZJIg10cmFja2luZwY7AEZ7B0kiFEhUVFBfVVNFUl9BR0VOVAY7%0AAFRJIi04NGEwMjRkMGJlMjgwOWIwZTgwMzkwOTFmODY5YzM0ZWZlN2MzMGUx%0ABjsARkkiGUhUVFBfQUNDRVBUX0xBTkdVQUdFBjsAVEkiLWRhMzlhM2VlNWU2%0AYjRiMGQzMjU1YmZlZjk1NjAxODkwYWZkODA3MDkGOwBG%0A--544360da477b1fd74efeaed082017f5b0a7396c2'} 
+ body=None 
+ </msg>
+<msg timestamp="20240114 23:57:15.202" level="INFO">GET Response : url=https://the-internet.herokuapp.com/img/avatar-blank.jpg 
+ status=200, reason=OK 
+ headers={'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1705256835&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=TyppDVaS1R%2BYSH9R26zFXxGHbxRdR6CgTDziK34oVrE%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1705256835&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;s=TyppDVaS1R%2BYSH9R26zFXxGHbxRdR6CgTDziK34oVrE%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Connection': 'keep-alive', 'Content-Type': 'image/jpeg', 'Last-Modified': 'Mon, 15 Feb 2021 17:29:38 GMT', 'Content-Length': '2464', 'X-Content-Type-Options': 'nosniff', 'Server': 'WEBrick/1.6.0 (Ruby/2.7.2/2020-10-01)', 'Date': 'Sun, 14 Jan 2024 18:27:15 GMT', 'Via': '1.1 vegur'} 
+ body=����JFIFdd��Duckyd��Adobed����������t	
+	!1A"QaR��B#q2br�3�$��?��                                                                                       wc�ߕuXش]��s�����lc¥UV��;`&amp;�׾��d����u�w�e���x�f�,r==��kq�$�o��D�3�����ƣ?��L������t#��1��Ѳ�q3��JS����/��-"Y��^?`Ĭ'Z\f��r����c�K\`C�V�;�j=vV̖Wb�tu%YVV}A������ӵm��ڊ�&amp;���7��H�\��[���S�$��^&gt;��ދ�b(ĩr��Vf�"���X���p|��j��Ge��2��i{�=�
+���Y�m�H�2���� �٠�Ǘ���ԑʰRΛc��yz��;b�a�k���R=�ڜ}��r��є�ˀ�����������{~'���M�4���WVf��^-�|�ßU\To�}m-���O澑_`�Y�ä�t�Ő}�z��/��v��_&lt;�è�~+������������|g�M�x�`Z��/��(�k�|֭��/zV��&lt;�@@@@@@@�ʮ�����U��eea�+)� ����a׻F�L���v9�s����͆[�v8�!?�n����K;�[���s���3����������:�����]�/ݍ������ƫ���@��         K�����.�a���4��ԟ�{0�� @�P('�;�|��.��]t���&gt;�����&lt;����r5,�#x��1�h&lt;��֥��Ǻ9^}A"�4[�N���np[�c�^Mc��[0��,#��q�[��)=X�o�x�S����I��a�S?':��xx���-�&lt;���o``k���ɺ��koȶˮ��-e��{,c�gv$��:�          N���W-�;���6�!�+��~���a���D`�y�9,D��[+�U�у#����J���A�@��##���������u��j�{,��TEQ�$� R��En�L=sX�{Wc��(s�~�}���
+��ƕo�P�x.�$�������������k~����+TnUo�+��Υ����0K+7��$�Nb��W���@Ư'�R�����]}�P���j*�˶�/����}HU�$A��{�&gt;�@���kqڶuj�����g�c�Ꮛ@ &gt;NU�����ԒB�,@!r�/ĝ�%9�U׸�/�����C��$���Z��}H*�	bY�~(��ƻ����F��t���dY�lqԪe+�=-�qą3��_sԶvj�XƋ�y�j�����b]�ڛ��2�F� c�2�ֶ}�q����"�^�_�F&amp;2�l���SPa��bAb���~���k�k*����d�2B��\Ò���]`�֧��I!��@@@@@@@�;oR�w-M��� �3��"����+��c���HO���`P�����Cs����������n+��c�ʻ&lt;H#�X&gt;���       rD{k�Y��Q���
+����f'��0/��������V�{�J�6�z���][@�1���,y���`         G?%�Z;���jDMֽl�����A�
+�&lt;q��)��
+�� �	��h��.�꺛�j�JY]��K+u`
+�0 ����u�+�.�[�3*���ƶ����kA8�s�߅X6�=U�fˀ�����������O&gt;y�����l*�ao�W�xJ��/�9〧&gt;��ǹ������     l�&gt;�:�L�`:xfdR6{G��궺?�������]^��7:��&gt;W�6f�Ӗ�@ߎ��o*j'�l05�*��q���{T��VV��S�|�1���^?|ZŠ             k��8�wNǭD𦽕��
+���s��~�5ђ���0�w�X+�[���Y���F�.��l�4�Y��.�
+k��p7q��U�v:Lfs�W���c��P�@�` �� 
+ </msg>
+<msg timestamp="20240114 23:57:15.202" level="INFO">/usr/lib/python3/dist-packages/urllib3/connectionpool.py:1020: InsecureRequestWarning: Unverified HTTPS request is being made to host 'the-internet.herokuapp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<status status="PASS" starttime="20240114 23:57:14.924" endtime="20240114 23:57:15.202"/>
+</kw>
+<msg timestamp="20240114 23:57:15.202" level="INFO">${response} = ('PASS', &lt;Response [200]&gt;)</msg>
+<status status="PASS" starttime="20240114 23:57:14.924" endtime="20240114 23:57:15.202"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Be Equal</arg>
+<arg>${response}[0]</arg>
+<arg>PASS</arg>
+<arg>Image is rendered</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${response}[0]</arg>
+<arg>PASS</arg>
+<arg>Image is rendered</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20240114 23:57:15.203" endtime="20240114 23:57:15.203"/>
+</kw>
+<status status="PASS" starttime="20240114 23:57:15.203" endtime="20240114 23:57:15.203"/>
+</kw>
+<status status="PASS" starttime="20240114 23:57:14.684" endtime="20240114 23:57:15.203"/>
+</iter>
+<status status="FAIL" starttime="20240114 23:57:12.759" endtime="20240114 23:57:15.203"/>
+</for>
+<status status="FAIL" starttime="20240114 23:57:09.245" endtime="20240114 23:57:15.203">Several failures occurred:
+
+1) Image is rendered: FAIL != PASS
+
+2) Image is rendered: FAIL != PASS</status>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240114 23:57:15.204" endtime="20240114 23:57:15.357"/>
+</kw>
+<status status="FAIL" starttime="20240114 23:57:08.182" endtime="20240114 23:57:15.357"/>
+</suite>
+<suite id="s1-s2" name="Data Tables" source="/home/lakshman_k/rftest/robot_Assignment/assignment5/data_tables.robot">
+<kw name="Browser Setup" library="common-function" type="SETUP">
+<kw name="Evaluate" library="BuiltIn">
+<var>${dc}</var>
+<arg>sys.modules['selenium.webdriver'].DesiredCapabilities()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240114 23:57:15.368" level="INFO">${dc} = &lt;selenium.webdriver.common.desired_capabilities.DesiredCapabilities object at 0x7fb8d5d7ee90&gt;</msg>
+<status status="PASS" starttime="20240114 23:57:15.367" endtime="20240114 23:57:15.368"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240114 23:57:15.368" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7fb8d5d7efe0&gt;</msg>
+<status status="PASS" starttime="20240114 23:57:15.368" endtime="20240114 23:57:15.369"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--enable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:15.369" endtime="20240114 23:57:15.369"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--window-size\=1360,768</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:15.369" endtime="20240114 23:57:15.370"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:15.370" endtime="20240114 23:57:15.370"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--allow-insecure-localhost</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:15.370" endtime="20240114 23:57:15.370"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--ignore-certificate-errors</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:15.371" endtime="20240114 23:57:15.371"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:15.371" endtime="20240114 23:57:15.371"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:15.371" endtime="20240114 23:57:15.372"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<var>${dc}</var>
+<arg>${chrome_options}</arg>
+<arg>to_capabilities</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20240114 23:57:15.372" level="INFO">${dc} = {'browserName': 'chrome', 'pageLoadStrategy': 'normal', 'goog:chromeOptions': {'extensions': [], 'args': ['--enable-notifications', '--window-size=1360,768', '--start-maximized', '--allow-insecure-loc...</msg>
+<status status="PASS" starttime="20240114 23:57:15.372" endtime="20240114 23:57:15.372"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${selenoid_args}</var>
+<arg>enableVNC=${True}</arg>
+<arg>name=${SUITE NAME}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20240114 23:57:15.373" level="INFO">${selenoid_args} = {'enableVNC': True, 'name': 'Assignment5.Data Tables'}</msg>
+<status status="PASS" starttime="20240114 23:57:15.373" endtime="20240114 23:57:15.373"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dc}</arg>
+<arg>selenoid:options</arg>
+<arg>${selenoid_args}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20240114 23:57:15.373" endtime="20240114 23:57:15.374"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${dc}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240114 23:57:15.374" level="INFO">{'browserName': 'chrome', 'pageLoadStrategy': 'normal', 'goog:chromeOptions': {'extensions': [], 'args': ['--enable-notifications', '--window-size=1360,768', '--start-maximized', '--allow-insecure-localhost', '--ignore-certificate-errors', '--no-sandbox', '--disable-dev-shm-usage']}, 'selenoid:options': {'enableVNC': True, 'name': 'Assignment5.Data Tables'}}</msg>
+<status status="PASS" starttime="20240114 23:57:15.374" endtime="20240114 23:57:15.374"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Remote</arg>
+<arg>command_executor=http://${hub_url}:4444/wd/hub</arg>
+<arg>desired_capabilities=${dc}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20240114 23:57:15.375" level="INFO">Creating an instance of the Remote WebDriver.</msg>
+<status status="PASS" starttime="20240114 23:57:15.374" endtime="20240114 23:57:16.100"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20240114 23:57:16.100" endtime="20240114 23:57:16.101"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Maximize Browser Window</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240114 23:57:16.101" endtime="20240114 23:57:16.307"/>
+</kw>
+<status status="PASS" starttime="20240114 23:57:16.101" endtime="20240114 23:57:16.307"/>
+</kw>
+<status status="PASS" starttime="20240114 23:57:15.367" endtime="20240114 23:57:16.307"/>
+</kw>
+<test id="s1-s2-t1" name="Sort Table By email" line="10">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240114 23:57:16.309" level="INFO">Opening url 'https://the-internet.herokuapp.com/tables'</msg>
+<status status="PASS" starttime="20240114 23:57:16.308" endtime="20240114 23:57:20.674"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//table[@id='table1']//th[@class='header']//span[text()='Email']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240114 23:57:20.675" level="INFO">Clicking element 'xpath=//table[@id='table1']//th[@class='header']//span[text()='Email']'.</msg>
+<status status="PASS" starttime="20240114 23:57:20.674" endtime="20240114 23:57:20.917"/>
+</kw>
+<status status="PASS" starttime="20240114 23:57:16.307" endtime="20240114 23:57:20.918"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240114 23:57:20.919" endtime="20240114 23:57:21.074"/>
+</kw>
+<status status="PASS" starttime="20240114 23:57:15.359" endtime="20240114 23:57:21.074"/>
+</suite>
+<suite id="s1-s3" name="Disappearing-Elements" source="/home/lakshman_k/rftest/robot_Assignment/assignment5/disappearing-elements.robot">
+<kw name="Browser Setup" library="common-function" type="SETUP">
+<kw name="Evaluate" library="BuiltIn">
+<var>${dc}</var>
+<arg>sys.modules['selenium.webdriver'].DesiredCapabilities()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240114 23:57:21.086" level="INFO">${dc} = &lt;selenium.webdriver.common.desired_capabilities.DesiredCapabilities object at 0x7fb8d5d784f0&gt;</msg>
+<status status="PASS" starttime="20240114 23:57:21.085" endtime="20240114 23:57:21.086"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240114 23:57:21.087" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7fb8d5d78640&gt;</msg>
+<status status="PASS" starttime="20240114 23:57:21.086" endtime="20240114 23:57:21.087"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--enable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:21.088" endtime="20240114 23:57:21.088"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--window-size\=1360,768</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:21.088" endtime="20240114 23:57:21.089"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:21.089" endtime="20240114 23:57:21.090"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--allow-insecure-localhost</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:21.090" endtime="20240114 23:57:21.091"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--ignore-certificate-errors</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:21.091" endtime="20240114 23:57:21.091"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:21.092" endtime="20240114 23:57:21.092"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:21.092" endtime="20240114 23:57:21.093"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<var>${dc}</var>
+<arg>${chrome_options}</arg>
+<arg>to_capabilities</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20240114 23:57:21.093" level="INFO">${dc} = {'browserName': 'chrome', 'pageLoadStrategy': 'normal', 'goog:chromeOptions': {'extensions': [], 'args': ['--enable-notifications', '--window-size=1360,768', '--start-maximized', '--allow-insecure-loc...</msg>
+<status status="PASS" starttime="20240114 23:57:21.093" endtime="20240114 23:57:21.093"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${selenoid_args}</var>
+<arg>enableVNC=${True}</arg>
+<arg>name=${SUITE NAME}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20240114 23:57:21.094" level="INFO">${selenoid_args} = {'enableVNC': True, 'name': 'Assignment5.Disappearing-Elements'}</msg>
+<status status="PASS" starttime="20240114 23:57:21.093" endtime="20240114 23:57:21.094"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dc}</arg>
+<arg>selenoid:options</arg>
+<arg>${selenoid_args}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20240114 23:57:21.094" endtime="20240114 23:57:21.094"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${dc}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240114 23:57:21.094" level="INFO">{'browserName': 'chrome', 'pageLoadStrategy': 'normal', 'goog:chromeOptions': {'extensions': [], 'args': ['--enable-notifications', '--window-size=1360,768', '--start-maximized', '--allow-insecure-localhost', '--ignore-certificate-errors', '--no-sandbox', '--disable-dev-shm-usage']}, 'selenoid:options': {'enableVNC': True, 'name': 'Assignment5.Disappearing-Elements'}}</msg>
+<status status="PASS" starttime="20240114 23:57:21.094" endtime="20240114 23:57:21.094"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Remote</arg>
+<arg>command_executor=http://${hub_url}:4444/wd/hub</arg>
+<arg>desired_capabilities=${dc}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20240114 23:57:21.095" level="INFO">Creating an instance of the Remote WebDriver.</msg>
+<status status="PASS" starttime="20240114 23:57:21.094" endtime="20240114 23:57:21.911"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20240114 23:57:21.911" endtime="20240114 23:57:21.911"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Maximize Browser Window</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240114 23:57:21.911" endtime="20240114 23:57:22.118"/>
+</kw>
+<status status="PASS" starttime="20240114 23:57:21.911" endtime="20240114 23:57:22.119"/>
+</kw>
+<status status="PASS" starttime="20240114 23:57:21.084" endtime="20240114 23:57:22.119"/>
+</kw>
+<test id="s1-s3-t1" name="Reload untill gallery element is not visible" line="11">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240114 23:57:22.120" level="INFO">Opening url 'https://the-internet.herokuapp.com/disappearing_elements'</msg>
+<status status="PASS" starttime="20240114 23:57:22.120" endtime="20240114 23:57:27.133"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${gallery_element_status}</var>
+<arg>PASS</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240114 23:57:27.134" level="INFO">${gallery_element_status} = PASS</msg>
+<status status="PASS" starttime="20240114 23:57:27.133" endtime="20240114 23:57:27.134"/>
+</kw>
+<while condition="'${gallery_element_status}' != 'FAIL'">
+<iter>
+<kw name="Reload Page" library="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" starttime="20240114 23:57:27.135" endtime="20240114 23:57:27.524"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<var>${gallery_element}</var>
+<arg>Element Should Not Be Visible</arg>
+<arg>xpath=//a[text()='Gallery']</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<arg>xpath=//a[text()='Gallery']</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<msg timestamp="20240114 23:57:27.993" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240114 23:57:27.993" level="FAIL">The element 'xpath=//a[text()='Gallery']' should not be visible, but it is.</msg>
+<status status="FAIL" starttime="20240114 23:57:27.524" endtime="20240114 23:57:27.994"/>
+</kw>
+<msg timestamp="20240114 23:57:27.995" level="INFO">${gallery_element} = ('FAIL', "The element 'xpath=//a[text()='Gallery']' should not be visible, but it is.")</msg>
+<status status="PASS" starttime="20240114 23:57:27.524" endtime="20240114 23:57:27.995"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${gallery_element_status}</var>
+<arg>${Gallery_element}[0]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240114 23:57:27.995" level="INFO">${gallery_element_status} = FAIL</msg>
+<status status="PASS" starttime="20240114 23:57:27.995" endtime="20240114 23:57:27.995"/>
+</kw>
+<status status="PASS" starttime="20240114 23:57:27.134" endtime="20240114 23:57:27.996"/>
+</iter>
+<status status="PASS" starttime="20240114 23:57:27.134" endtime="20240114 23:57:27.996"/>
+</while>
+<status status="PASS" starttime="20240114 23:57:22.119" endtime="20240114 23:57:27.996"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240114 23:57:27.997" endtime="20240114 23:57:28.151"/>
+</kw>
+<status status="PASS" starttime="20240114 23:57:21.077" endtime="20240114 23:57:28.152"/>
+</suite>
+<suite id="s1-s4" name="Dynamic-Controls" source="/home/lakshman_k/rftest/robot_Assignment/assignment5/dynamic-controls.robot">
+<kw name="Browser Setup" library="common-function" type="SETUP">
+<kw name="Evaluate" library="BuiltIn">
+<var>${dc}</var>
+<arg>sys.modules['selenium.webdriver'].DesiredCapabilities()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240114 23:57:28.162" level="INFO">${dc} = &lt;selenium.webdriver.common.desired_capabilities.DesiredCapabilities object at 0x7fb8d5d7fc10&gt;</msg>
+<status status="PASS" starttime="20240114 23:57:28.161" endtime="20240114 23:57:28.162"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240114 23:57:28.163" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7fb8d5d7f3d0&gt;</msg>
+<status status="PASS" starttime="20240114 23:57:28.162" endtime="20240114 23:57:28.163"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--enable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:28.163" endtime="20240114 23:57:28.164"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--window-size\=1360,768</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:28.164" endtime="20240114 23:57:28.164"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:28.165" endtime="20240114 23:57:28.165"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--allow-insecure-localhost</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:28.165" endtime="20240114 23:57:28.165"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--ignore-certificate-errors</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:28.166" endtime="20240114 23:57:28.166"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:28.166" endtime="20240114 23:57:28.166"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:28.167" endtime="20240114 23:57:28.167"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<var>${dc}</var>
+<arg>${chrome_options}</arg>
+<arg>to_capabilities</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20240114 23:57:28.167" level="INFO">${dc} = {'browserName': 'chrome', 'pageLoadStrategy': 'normal', 'goog:chromeOptions': {'extensions': [], 'args': ['--enable-notifications', '--window-size=1360,768', '--start-maximized', '--allow-insecure-loc...</msg>
+<status status="PASS" starttime="20240114 23:57:28.167" endtime="20240114 23:57:28.167"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${selenoid_args}</var>
+<arg>enableVNC=${True}</arg>
+<arg>name=${SUITE NAME}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20240114 23:57:28.168" level="INFO">${selenoid_args} = {'enableVNC': True, 'name': 'Assignment5.Dynamic-Controls'}</msg>
+<status status="PASS" starttime="20240114 23:57:28.168" endtime="20240114 23:57:28.168"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dc}</arg>
+<arg>selenoid:options</arg>
+<arg>${selenoid_args}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20240114 23:57:28.168" endtime="20240114 23:57:28.169"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${dc}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240114 23:57:28.169" level="INFO">{'browserName': 'chrome', 'pageLoadStrategy': 'normal', 'goog:chromeOptions': {'extensions': [], 'args': ['--enable-notifications', '--window-size=1360,768', '--start-maximized', '--allow-insecure-localhost', '--ignore-certificate-errors', '--no-sandbox', '--disable-dev-shm-usage']}, 'selenoid:options': {'enableVNC': True, 'name': 'Assignment5.Dynamic-Controls'}}</msg>
+<status status="PASS" starttime="20240114 23:57:28.169" endtime="20240114 23:57:28.169"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Remote</arg>
+<arg>command_executor=http://${hub_url}:4444/wd/hub</arg>
+<arg>desired_capabilities=${dc}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20240114 23:57:28.170" level="INFO">Creating an instance of the Remote WebDriver.</msg>
+<status status="PASS" starttime="20240114 23:57:28.169" endtime="20240114 23:57:29.005"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20240114 23:57:29.005" endtime="20240114 23:57:29.005"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Maximize Browser Window</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240114 23:57:29.006" endtime="20240114 23:57:29.209"/>
+</kw>
+<status status="PASS" starttime="20240114 23:57:29.005" endtime="20240114 23:57:29.209"/>
+</kw>
+<status status="PASS" starttime="20240114 23:57:28.161" endtime="20240114 23:57:29.209"/>
+</kw>
+<test id="s1-s4-t1" name="Click the remove button and assert checkbox is removed" line="10">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240114 23:57:29.211" level="INFO">Opening url 'https://the-internet.herokuapp.com/dynamic_controls'</msg>
+<status status="PASS" starttime="20240114 23:57:29.211" endtime="20240114 23:57:40.368"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//form[@id='checkbox-example']/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240114 23:57:40.369" level="INFO">Clicking element 'xpath=//form[@id='checkbox-example']/button'.</msg>
+<status status="PASS" starttime="20240114 23:57:40.368" endtime="20240114 23:57:40.635"/>
+</kw>
+<kw name="Wait Until element is displayed" library="common-function">
+<arg>xpath=//p[@id='message']</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${xpath}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240114 23:57:40.635" endtime="20240114 23:57:44.018"/>
+</kw>
+<status status="PASS" starttime="20240114 23:57:40.635" endtime="20240114 23:57:44.019"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${its_gone_text}</var>
+<arg>xpath=//p[@id='message']</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240114 23:57:44.264" level="INFO">${its_gone_text} = It's gone!</msg>
+<status status="PASS" starttime="20240114 23:57:44.019" endtime="20240114 23:57:44.264"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${its_gone_text}</arg>
+<arg>It's gone!</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20240114 23:57:44.264" endtime="20240114 23:57:44.265"/>
+</kw>
+<status status="PASS" starttime="20240114 23:57:29.210" endtime="20240114 23:57:44.266"/>
+</test>
+<test id="s1-s4-t2" name="Click Enable button and enter text in Input Box and take screenshot" line="17">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//form[@id='input-example']/button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240114 23:57:44.269" level="INFO">Clicking element 'xpath=//form[@id='input-example']/button'.</msg>
+<status status="PASS" starttime="20240114 23:57:44.268" endtime="20240114 23:57:44.522"/>
+</kw>
+<kw name="Wait Until element is displayed" library="common-function">
+<arg>xpath=//form[@id='input-example']//p[@id='message']</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${xpath}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240114 23:57:44.523" endtime="20240114 23:57:47.927"/>
+</kw>
+<status status="PASS" starttime="20240114 23:57:44.522" endtime="20240114 23:57:47.927"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${its_enabled_text}</var>
+<arg>xpath=//form[@id='input-example']//p[@id='message']</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240114 23:57:48.163" level="INFO">${its_enabled_text} = It's enabled!</msg>
+<status status="PASS" starttime="20240114 23:57:47.927" endtime="20240114 23:57:48.163"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${its_enabled_text}</arg>
+<arg>It's enabled!</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20240114 23:57:48.164" endtime="20240114 23:57:48.164"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath=//form[@id='input-example']//input[@type='text']</arg>
+<arg>HELLO</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240114 23:57:48.166" level="INFO">Typing text 'HELLO' into text field 'xpath=//form[@id='input-example']//input[@type='text']'.</msg>
+<status status="PASS" starttime="20240114 23:57:48.165" endtime="20240114 23:57:48.597"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>hello.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20240114 23:57:48.824" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="hello.png"&gt;&lt;img src="hello.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20240114 23:57:48.597" endtime="20240114 23:57:48.824"/>
+</kw>
+<status status="PASS" starttime="20240114 23:57:44.266" endtime="20240114 23:57:48.824"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240114 23:57:48.825" endtime="20240114 23:57:48.979"/>
+</kw>
+<status status="PASS" starttime="20240114 23:57:28.153" endtime="20240114 23:57:48.980"/>
+</suite>
+<suite id="s1-s5" name="Dynamically-Loaded-Page-Elements" source="/home/lakshman_k/rftest/robot_Assignment/assignment5/dynamically-loaded-page-elements.robot">
+<kw name="Browser Setup" library="common-function" type="SETUP">
+<kw name="Evaluate" library="BuiltIn">
+<var>${dc}</var>
+<arg>sys.modules['selenium.webdriver'].DesiredCapabilities()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240114 23:57:48.989" level="INFO">${dc} = &lt;selenium.webdriver.common.desired_capabilities.DesiredCapabilities object at 0x7fb8d5d7a620&gt;</msg>
+<status status="PASS" starttime="20240114 23:57:48.988" endtime="20240114 23:57:48.989"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240114 23:57:48.990" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7fb8d5d7a770&gt;</msg>
+<status status="PASS" starttime="20240114 23:57:48.989" endtime="20240114 23:57:48.990"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--enable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:48.990" endtime="20240114 23:57:48.990"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--window-size\=1360,768</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:48.990" endtime="20240114 23:57:48.991"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:48.991" endtime="20240114 23:57:48.991"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--allow-insecure-localhost</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:48.991" endtime="20240114 23:57:48.992"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--ignore-certificate-errors</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:48.992" endtime="20240114 23:57:48.993"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:48.993" endtime="20240114 23:57:48.993"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:48.993" endtime="20240114 23:57:48.993"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<var>${dc}</var>
+<arg>${chrome_options}</arg>
+<arg>to_capabilities</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20240114 23:57:48.994" level="INFO">${dc} = {'browserName': 'chrome', 'pageLoadStrategy': 'normal', 'goog:chromeOptions': {'extensions': [], 'args': ['--enable-notifications', '--window-size=1360,768', '--start-maximized', '--allow-insecure-loc...</msg>
+<status status="PASS" starttime="20240114 23:57:48.994" endtime="20240114 23:57:48.994"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${selenoid_args}</var>
+<arg>enableVNC=${True}</arg>
+<arg>name=${SUITE NAME}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20240114 23:57:48.995" level="INFO">${selenoid_args} = {'enableVNC': True, 'name': 'Assignment5.Dynamically-Loaded-Page-Elements'}</msg>
+<status status="PASS" starttime="20240114 23:57:48.994" endtime="20240114 23:57:48.995"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dc}</arg>
+<arg>selenoid:options</arg>
+<arg>${selenoid_args}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20240114 23:57:48.995" endtime="20240114 23:57:48.995"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${dc}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240114 23:57:48.995" level="INFO">{'browserName': 'chrome', 'pageLoadStrategy': 'normal', 'goog:chromeOptions': {'extensions': [], 'args': ['--enable-notifications', '--window-size=1360,768', '--start-maximized', '--allow-insecure-localhost', '--ignore-certificate-errors', '--no-sandbox', '--disable-dev-shm-usage']}, 'selenoid:options': {'enableVNC': True, 'name': 'Assignment5.Dynamically-Loaded-Page-Elements'}}</msg>
+<status status="PASS" starttime="20240114 23:57:48.995" endtime="20240114 23:57:48.996"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Remote</arg>
+<arg>command_executor=http://${hub_url}:4444/wd/hub</arg>
+<arg>desired_capabilities=${dc}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20240114 23:57:48.996" level="INFO">Creating an instance of the Remote WebDriver.</msg>
+<status status="PASS" starttime="20240114 23:57:48.996" endtime="20240114 23:57:49.877"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20240114 23:57:49.877" endtime="20240114 23:57:49.877"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Maximize Browser Window</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240114 23:57:49.877" endtime="20240114 23:57:50.083"/>
+</kw>
+<status status="PASS" starttime="20240114 23:57:49.877" endtime="20240114 23:57:50.084"/>
+</kw>
+<status status="PASS" starttime="20240114 23:57:48.988" endtime="20240114 23:57:50.084"/>
+</kw>
+<test id="s1-s5-t1" name="Click Start And Assert Hello World Text" line="10">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240114 23:57:50.085" level="INFO">Opening url 'https://the-internet.herokuapp.com/dynamic_loading/1'</msg>
+<status status="PASS" starttime="20240114 23:57:50.085" endtime="20240114 23:57:53.739"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath=//div[@id='start']/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240114 23:57:53.740" level="INFO">Clicking button 'xpath=//div[@id='start']/button'.</msg>
+<status status="PASS" starttime="20240114 23:57:53.739" endtime="20240114 23:57:54.336"/>
+</kw>
+<kw name="Wait Until element is displayed" library="common-function">
+<arg>xpath=//div[@id='finish']/h4</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${xpath}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240114 23:57:54.338" endtime="20240114 23:57:59.371"/>
+</kw>
+<status status="PASS" starttime="20240114 23:57:54.337" endtime="20240114 23:57:59.371"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${hello_world_text}</var>
+<arg>xpath=//div[@id='finish']/h4</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240114 23:57:59.614" level="INFO">${hello_world_text} = Hello World!</msg>
+<status status="PASS" starttime="20240114 23:57:59.372" endtime="20240114 23:57:59.614"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${hello_world_text}</arg>
+<arg>Hello World!</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20240114 23:57:59.615" endtime="20240114 23:57:59.615"/>
+</kw>
+<status status="PASS" starttime="20240114 23:57:50.084" endtime="20240114 23:57:59.616"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240114 23:57:59.617" endtime="20240114 23:57:59.771"/>
+</kw>
+<status status="PASS" starttime="20240114 23:57:48.982" endtime="20240114 23:57:59.771"/>
+</suite>
+<suite id="s1-s6" name="Horozontal-Slider" source="/home/lakshman_k/rftest/robot_Assignment/assignment5/horozontal-slider.robot">
+<kw name="Browser Setup" library="common-function" type="SETUP">
+<kw name="Evaluate" library="BuiltIn">
+<var>${dc}</var>
+<arg>sys.modules['selenium.webdriver'].DesiredCapabilities()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240114 23:57:59.781" level="INFO">${dc} = &lt;selenium.webdriver.common.desired_capabilities.DesiredCapabilities object at 0x7fb8d5d7cb20&gt;</msg>
+<status status="PASS" starttime="20240114 23:57:59.780" endtime="20240114 23:57:59.781"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240114 23:57:59.782" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7fb8d5d7ce50&gt;</msg>
+<status status="PASS" starttime="20240114 23:57:59.782" endtime="20240114 23:57:59.782"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--enable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:59.782" endtime="20240114 23:57:59.783"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--window-size\=1360,768</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:59.783" endtime="20240114 23:57:59.784"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:59.784" endtime="20240114 23:57:59.784"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--allow-insecure-localhost</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:59.785" endtime="20240114 23:57:59.785"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--ignore-certificate-errors</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:59.786" endtime="20240114 23:57:59.786"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:59.786" endtime="20240114 23:57:59.787"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:57:59.787" endtime="20240114 23:57:59.787"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<var>${dc}</var>
+<arg>${chrome_options}</arg>
+<arg>to_capabilities</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20240114 23:57:59.788" level="INFO">${dc} = {'browserName': 'chrome', 'pageLoadStrategy': 'normal', 'goog:chromeOptions': {'extensions': [], 'args': ['--enable-notifications', '--window-size=1360,768', '--start-maximized', '--allow-insecure-loc...</msg>
+<status status="PASS" starttime="20240114 23:57:59.787" endtime="20240114 23:57:59.788"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${selenoid_args}</var>
+<arg>enableVNC=${True}</arg>
+<arg>name=${SUITE NAME}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20240114 23:57:59.789" level="INFO">${selenoid_args} = {'enableVNC': True, 'name': 'Assignment5.Horozontal-Slider'}</msg>
+<status status="PASS" starttime="20240114 23:57:59.788" endtime="20240114 23:57:59.789"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dc}</arg>
+<arg>selenoid:options</arg>
+<arg>${selenoid_args}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20240114 23:57:59.789" endtime="20240114 23:57:59.790"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${dc}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240114 23:57:59.790" level="INFO">{'browserName': 'chrome', 'pageLoadStrategy': 'normal', 'goog:chromeOptions': {'extensions': [], 'args': ['--enable-notifications', '--window-size=1360,768', '--start-maximized', '--allow-insecure-localhost', '--ignore-certificate-errors', '--no-sandbox', '--disable-dev-shm-usage']}, 'selenoid:options': {'enableVNC': True, 'name': 'Assignment5.Horozontal-Slider'}}</msg>
+<status status="PASS" starttime="20240114 23:57:59.790" endtime="20240114 23:57:59.790"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Remote</arg>
+<arg>command_executor=http://${hub_url}:4444/wd/hub</arg>
+<arg>desired_capabilities=${dc}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20240114 23:57:59.791" level="INFO">Creating an instance of the Remote WebDriver.</msg>
+<status status="PASS" starttime="20240114 23:57:59.790" endtime="20240114 23:58:00.664"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20240114 23:58:00.664" endtime="20240114 23:58:00.664"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Maximize Browser Window</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240114 23:58:00.664" endtime="20240114 23:58:00.870"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:00.664" endtime="20240114 23:58:00.870"/>
+</kw>
+<status status="PASS" starttime="20240114 23:57:59.780" endtime="20240114 23:58:00.871"/>
+</kw>
+<test id="s1-s6-t1" name="Horizonal Slider check" line="11">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240114 23:58:00.872" level="INFO">Opening url 'https://the-internet.herokuapp.com/horizontal_slider'</msg>
+<status status="PASS" starttime="20240114 23:58:00.872" endtime="20240114 23:58:03.987"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//input[@type='range']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240114 23:58:03.988" level="INFO">Clicking element 'xpath=//input[@type='range']'.</msg>
+<status status="PASS" starttime="20240114 23:58:03.987" endtime="20240114 23:58:04.261"/>
+</kw>
+<kw name="Get Slider text" library="common-function">
+<var>${slider_value}</var>
+<arg>xpath=//span[@id='range']</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${slider_value_txt}</var>
+<arg>${element_path}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240114 23:58:04.515" level="INFO">${slider_value_txt} = 2.5</msg>
+<status status="PASS" starttime="20240114 23:58:04.262" endtime="20240114 23:58:04.515"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${slider_value}</var>
+<arg>${slider_value_txt}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20240114 23:58:04.516" level="INFO">${slider_value} = 2.5</msg>
+<status status="PASS" starttime="20240114 23:58:04.515" endtime="20240114 23:58:04.516"/>
+</kw>
+<msg timestamp="20240114 23:58:04.516" level="INFO">${slider_value} = 2.5</msg>
+<status status="PASS" starttime="20240114 23:58:04.261" endtime="20240114 23:58:04.516"/>
+</kw>
+<while condition="${slider_value} &gt; 0">
+<iter>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>LEFT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 23:58:04.518" level="INFO">Sending key(s) ('LEFT',) to page.</msg>
+<msg timestamp="20240114 23:58:04.518" level="INFO">Pressing special key LEFT to browser.</msg>
+<msg timestamp="20240114 23:58:04.518" level="INFO">Releasing special key LEFT.</msg>
+<status status="PASS" starttime="20240114 23:58:04.517" endtime="20240114 23:58:04.634"/>
+</kw>
+<kw name="Get Slider text" library="common-function">
+<var>${slider_value}</var>
+<arg>xpath=//span[@id='range']</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${slider_value_txt}</var>
+<arg>${element_path}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240114 23:58:04.872" level="INFO">${slider_value_txt} = 2</msg>
+<status status="PASS" starttime="20240114 23:58:04.635" endtime="20240114 23:58:04.872"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${slider_value}</var>
+<arg>${slider_value_txt}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20240114 23:58:04.873" level="INFO">${slider_value} = 2.0</msg>
+<status status="PASS" starttime="20240114 23:58:04.872" endtime="20240114 23:58:04.873"/>
+</kw>
+<msg timestamp="20240114 23:58:04.873" level="INFO">${slider_value} = 2.0</msg>
+<status status="PASS" starttime="20240114 23:58:04.635" endtime="20240114 23:58:04.873"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:04.516" endtime="20240114 23:58:04.873"/>
+</iter>
+<iter>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>LEFT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 23:58:04.875" level="INFO">Sending key(s) ('LEFT',) to page.</msg>
+<msg timestamp="20240114 23:58:04.875" level="INFO">Pressing special key LEFT to browser.</msg>
+<msg timestamp="20240114 23:58:04.875" level="INFO">Releasing special key LEFT.</msg>
+<status status="PASS" starttime="20240114 23:58:04.874" endtime="20240114 23:58:04.983"/>
+</kw>
+<kw name="Get Slider text" library="common-function">
+<var>${slider_value}</var>
+<arg>xpath=//span[@id='range']</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${slider_value_txt}</var>
+<arg>${element_path}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240114 23:58:05.217" level="INFO">${slider_value_txt} = 1.5</msg>
+<status status="PASS" starttime="20240114 23:58:04.984" endtime="20240114 23:58:05.217"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${slider_value}</var>
+<arg>${slider_value_txt}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20240114 23:58:05.218" level="INFO">${slider_value} = 1.5</msg>
+<status status="PASS" starttime="20240114 23:58:05.217" endtime="20240114 23:58:05.218"/>
+</kw>
+<msg timestamp="20240114 23:58:05.218" level="INFO">${slider_value} = 1.5</msg>
+<status status="PASS" starttime="20240114 23:58:04.983" endtime="20240114 23:58:05.218"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:04.873" endtime="20240114 23:58:05.218"/>
+</iter>
+<iter>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>LEFT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 23:58:05.220" level="INFO">Sending key(s) ('LEFT',) to page.</msg>
+<msg timestamp="20240114 23:58:05.220" level="INFO">Pressing special key LEFT to browser.</msg>
+<msg timestamp="20240114 23:58:05.220" level="INFO">Releasing special key LEFT.</msg>
+<status status="PASS" starttime="20240114 23:58:05.219" endtime="20240114 23:58:05.334"/>
+</kw>
+<kw name="Get Slider text" library="common-function">
+<var>${slider_value}</var>
+<arg>xpath=//span[@id='range']</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${slider_value_txt}</var>
+<arg>${element_path}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240114 23:58:05.572" level="INFO">${slider_value_txt} = 1</msg>
+<status status="PASS" starttime="20240114 23:58:05.335" endtime="20240114 23:58:05.572"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${slider_value}</var>
+<arg>${slider_value_txt}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20240114 23:58:05.572" level="INFO">${slider_value} = 1.0</msg>
+<status status="PASS" starttime="20240114 23:58:05.572" endtime="20240114 23:58:05.572"/>
+</kw>
+<msg timestamp="20240114 23:58:05.573" level="INFO">${slider_value} = 1.0</msg>
+<status status="PASS" starttime="20240114 23:58:05.334" endtime="20240114 23:58:05.573"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:05.218" endtime="20240114 23:58:05.573"/>
+</iter>
+<iter>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>LEFT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 23:58:05.573" level="INFO">Sending key(s) ('LEFT',) to page.</msg>
+<msg timestamp="20240114 23:58:05.573" level="INFO">Pressing special key LEFT to browser.</msg>
+<msg timestamp="20240114 23:58:05.574" level="INFO">Releasing special key LEFT.</msg>
+<status status="PASS" starttime="20240114 23:58:05.573" endtime="20240114 23:58:05.681"/>
+</kw>
+<kw name="Get Slider text" library="common-function">
+<var>${slider_value}</var>
+<arg>xpath=//span[@id='range']</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${slider_value_txt}</var>
+<arg>${element_path}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240114 23:58:05.919" level="INFO">${slider_value_txt} = 0.5</msg>
+<status status="PASS" starttime="20240114 23:58:05.682" endtime="20240114 23:58:05.919"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${slider_value}</var>
+<arg>${slider_value_txt}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20240114 23:58:05.919" level="INFO">${slider_value} = 0.5</msg>
+<status status="PASS" starttime="20240114 23:58:05.919" endtime="20240114 23:58:05.919"/>
+</kw>
+<msg timestamp="20240114 23:58:05.919" level="INFO">${slider_value} = 0.5</msg>
+<status status="PASS" starttime="20240114 23:58:05.681" endtime="20240114 23:58:05.919"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:05.573" endtime="20240114 23:58:05.919"/>
+</iter>
+<iter>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>LEFT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 23:58:05.920" level="INFO">Sending key(s) ('LEFT',) to page.</msg>
+<msg timestamp="20240114 23:58:05.920" level="INFO">Pressing special key LEFT to browser.</msg>
+<msg timestamp="20240114 23:58:05.920" level="INFO">Releasing special key LEFT.</msg>
+<status status="PASS" starttime="20240114 23:58:05.919" endtime="20240114 23:58:06.026"/>
+</kw>
+<kw name="Get Slider text" library="common-function">
+<var>${slider_value}</var>
+<arg>xpath=//span[@id='range']</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${slider_value_txt}</var>
+<arg>${element_path}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240114 23:58:06.251" level="INFO">${slider_value_txt} = 0</msg>
+<status status="PASS" starttime="20240114 23:58:06.028" endtime="20240114 23:58:06.251"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${slider_value}</var>
+<arg>${slider_value_txt}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20240114 23:58:06.252" level="INFO">${slider_value} = 0.0</msg>
+<status status="PASS" starttime="20240114 23:58:06.251" endtime="20240114 23:58:06.252"/>
+</kw>
+<msg timestamp="20240114 23:58:06.252" level="INFO">${slider_value} = 0.0</msg>
+<status status="PASS" starttime="20240114 23:58:06.027" endtime="20240114 23:58:06.252"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:05.919" endtime="20240114 23:58:06.252"/>
+</iter>
+<status status="PASS" starttime="20240114 23:58:04.516" endtime="20240114 23:58:06.253"/>
+</while>
+<while condition="${slider_value} &lt; 5">
+<iter>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 23:58:06.254" level="INFO">Sending key(s) ('RIGHT',) to page.</msg>
+<msg timestamp="20240114 23:58:06.255" level="INFO">Pressing special key RIGHT to browser.</msg>
+<msg timestamp="20240114 23:58:06.255" level="INFO">Releasing special key RIGHT.</msg>
+<status status="PASS" starttime="20240114 23:58:06.253" endtime="20240114 23:58:06.361"/>
+</kw>
+<kw name="Get Slider text" library="common-function">
+<var>${slider_value}</var>
+<arg>xpath=//span[@id='range']</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${slider_value_txt}</var>
+<arg>${element_path}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240114 23:58:06.596" level="INFO">${slider_value_txt} = 0.5</msg>
+<status status="PASS" starttime="20240114 23:58:06.362" endtime="20240114 23:58:06.596"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${slider_value}</var>
+<arg>${slider_value_txt}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20240114 23:58:06.597" level="INFO">${slider_value} = 0.5</msg>
+<status status="PASS" starttime="20240114 23:58:06.596" endtime="20240114 23:58:06.597"/>
+</kw>
+<msg timestamp="20240114 23:58:06.597" level="INFO">${slider_value} = 0.5</msg>
+<status status="PASS" starttime="20240114 23:58:06.361" endtime="20240114 23:58:06.597"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:06.253" endtime="20240114 23:58:06.597"/>
+</iter>
+<iter>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 23:58:06.599" level="INFO">Sending key(s) ('RIGHT',) to page.</msg>
+<msg timestamp="20240114 23:58:06.599" level="INFO">Pressing special key RIGHT to browser.</msg>
+<msg timestamp="20240114 23:58:06.599" level="INFO">Releasing special key RIGHT.</msg>
+<status status="PASS" starttime="20240114 23:58:06.598" endtime="20240114 23:58:06.712"/>
+</kw>
+<kw name="Get Slider text" library="common-function">
+<var>${slider_value}</var>
+<arg>xpath=//span[@id='range']</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${slider_value_txt}</var>
+<arg>${element_path}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240114 23:58:06.950" level="INFO">${slider_value_txt} = 1</msg>
+<status status="PASS" starttime="20240114 23:58:06.713" endtime="20240114 23:58:06.950"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${slider_value}</var>
+<arg>${slider_value_txt}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20240114 23:58:06.951" level="INFO">${slider_value} = 1.0</msg>
+<status status="PASS" starttime="20240114 23:58:06.950" endtime="20240114 23:58:06.951"/>
+</kw>
+<msg timestamp="20240114 23:58:06.951" level="INFO">${slider_value} = 1.0</msg>
+<status status="PASS" starttime="20240114 23:58:06.712" endtime="20240114 23:58:06.951"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:06.597" endtime="20240114 23:58:06.951"/>
+</iter>
+<iter>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 23:58:06.953" level="INFO">Sending key(s) ('RIGHT',) to page.</msg>
+<msg timestamp="20240114 23:58:06.953" level="INFO">Pressing special key RIGHT to browser.</msg>
+<msg timestamp="20240114 23:58:06.953" level="INFO">Releasing special key RIGHT.</msg>
+<status status="PASS" starttime="20240114 23:58:06.952" endtime="20240114 23:58:07.066"/>
+</kw>
+<kw name="Get Slider text" library="common-function">
+<var>${slider_value}</var>
+<arg>xpath=//span[@id='range']</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${slider_value_txt}</var>
+<arg>${element_path}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240114 23:58:07.300" level="INFO">${slider_value_txt} = 1.5</msg>
+<status status="PASS" starttime="20240114 23:58:07.068" endtime="20240114 23:58:07.300"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${slider_value}</var>
+<arg>${slider_value_txt}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20240114 23:58:07.301" level="INFO">${slider_value} = 1.5</msg>
+<status status="PASS" starttime="20240114 23:58:07.300" endtime="20240114 23:58:07.301"/>
+</kw>
+<msg timestamp="20240114 23:58:07.301" level="INFO">${slider_value} = 1.5</msg>
+<status status="PASS" starttime="20240114 23:58:07.067" endtime="20240114 23:58:07.301"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:06.951" endtime="20240114 23:58:07.301"/>
+</iter>
+<iter>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 23:58:07.303" level="INFO">Sending key(s) ('RIGHT',) to page.</msg>
+<msg timestamp="20240114 23:58:07.303" level="INFO">Pressing special key RIGHT to browser.</msg>
+<msg timestamp="20240114 23:58:07.303" level="INFO">Releasing special key RIGHT.</msg>
+<status status="PASS" starttime="20240114 23:58:07.302" endtime="20240114 23:58:07.413"/>
+</kw>
+<kw name="Get Slider text" library="common-function">
+<var>${slider_value}</var>
+<arg>xpath=//span[@id='range']</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${slider_value_txt}</var>
+<arg>${element_path}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240114 23:58:07.649" level="INFO">${slider_value_txt} = 2</msg>
+<status status="PASS" starttime="20240114 23:58:07.414" endtime="20240114 23:58:07.649"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${slider_value}</var>
+<arg>${slider_value_txt}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20240114 23:58:07.650" level="INFO">${slider_value} = 2.0</msg>
+<status status="PASS" starttime="20240114 23:58:07.649" endtime="20240114 23:58:07.650"/>
+</kw>
+<msg timestamp="20240114 23:58:07.650" level="INFO">${slider_value} = 2.0</msg>
+<status status="PASS" starttime="20240114 23:58:07.413" endtime="20240114 23:58:07.650"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:07.301" endtime="20240114 23:58:07.650"/>
+</iter>
+<iter>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 23:58:07.652" level="INFO">Sending key(s) ('RIGHT',) to page.</msg>
+<msg timestamp="20240114 23:58:07.652" level="INFO">Pressing special key RIGHT to browser.</msg>
+<msg timestamp="20240114 23:58:07.652" level="INFO">Releasing special key RIGHT.</msg>
+<status status="PASS" starttime="20240114 23:58:07.651" endtime="20240114 23:58:07.767"/>
+</kw>
+<kw name="Get Slider text" library="common-function">
+<var>${slider_value}</var>
+<arg>xpath=//span[@id='range']</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${slider_value_txt}</var>
+<arg>${element_path}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240114 23:58:08.006" level="INFO">${slider_value_txt} = 2.5</msg>
+<status status="PASS" starttime="20240114 23:58:07.768" endtime="20240114 23:58:08.006"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${slider_value}</var>
+<arg>${slider_value_txt}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20240114 23:58:08.007" level="INFO">${slider_value} = 2.5</msg>
+<status status="PASS" starttime="20240114 23:58:08.006" endtime="20240114 23:58:08.007"/>
+</kw>
+<msg timestamp="20240114 23:58:08.007" level="INFO">${slider_value} = 2.5</msg>
+<status status="PASS" starttime="20240114 23:58:07.767" endtime="20240114 23:58:08.007"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:07.650" endtime="20240114 23:58:08.008"/>
+</iter>
+<iter>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 23:58:08.009" level="INFO">Sending key(s) ('RIGHT',) to page.</msg>
+<msg timestamp="20240114 23:58:08.009" level="INFO">Pressing special key RIGHT to browser.</msg>
+<msg timestamp="20240114 23:58:08.009" level="INFO">Releasing special key RIGHT.</msg>
+<status status="PASS" starttime="20240114 23:58:08.008" endtime="20240114 23:58:08.123"/>
+</kw>
+<kw name="Get Slider text" library="common-function">
+<var>${slider_value}</var>
+<arg>xpath=//span[@id='range']</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${slider_value_txt}</var>
+<arg>${element_path}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240114 23:58:08.357" level="INFO">${slider_value_txt} = 3</msg>
+<status status="PASS" starttime="20240114 23:58:08.124" endtime="20240114 23:58:08.357"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${slider_value}</var>
+<arg>${slider_value_txt}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20240114 23:58:08.358" level="INFO">${slider_value} = 3.0</msg>
+<status status="PASS" starttime="20240114 23:58:08.357" endtime="20240114 23:58:08.358"/>
+</kw>
+<msg timestamp="20240114 23:58:08.359" level="INFO">${slider_value} = 3.0</msg>
+<status status="PASS" starttime="20240114 23:58:08.123" endtime="20240114 23:58:08.359"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:08.008" endtime="20240114 23:58:08.359"/>
+</iter>
+<iter>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 23:58:08.360" level="INFO">Sending key(s) ('RIGHT',) to page.</msg>
+<msg timestamp="20240114 23:58:08.361" level="INFO">Pressing special key RIGHT to browser.</msg>
+<msg timestamp="20240114 23:58:08.361" level="INFO">Releasing special key RIGHT.</msg>
+<status status="PASS" starttime="20240114 23:58:08.359" endtime="20240114 23:58:08.474"/>
+</kw>
+<kw name="Get Slider text" library="common-function">
+<var>${slider_value}</var>
+<arg>xpath=//span[@id='range']</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${slider_value_txt}</var>
+<arg>${element_path}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240114 23:58:08.689" level="INFO">${slider_value_txt} = 3.5</msg>
+<status status="PASS" starttime="20240114 23:58:08.475" endtime="20240114 23:58:08.689"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${slider_value}</var>
+<arg>${slider_value_txt}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20240114 23:58:08.689" level="INFO">${slider_value} = 3.5</msg>
+<status status="PASS" starttime="20240114 23:58:08.689" endtime="20240114 23:58:08.689"/>
+</kw>
+<msg timestamp="20240114 23:58:08.689" level="INFO">${slider_value} = 3.5</msg>
+<status status="PASS" starttime="20240114 23:58:08.475" endtime="20240114 23:58:08.689"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:08.359" endtime="20240114 23:58:08.689"/>
+</iter>
+<iter>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 23:58:08.690" level="INFO">Sending key(s) ('RIGHT',) to page.</msg>
+<msg timestamp="20240114 23:58:08.690" level="INFO">Pressing special key RIGHT to browser.</msg>
+<msg timestamp="20240114 23:58:08.690" level="INFO">Releasing special key RIGHT.</msg>
+<status status="PASS" starttime="20240114 23:58:08.689" endtime="20240114 23:58:08.796"/>
+</kw>
+<kw name="Get Slider text" library="common-function">
+<var>${slider_value}</var>
+<arg>xpath=//span[@id='range']</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${slider_value_txt}</var>
+<arg>${element_path}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240114 23:58:09.031" level="INFO">${slider_value_txt} = 4</msg>
+<status status="PASS" starttime="20240114 23:58:08.797" endtime="20240114 23:58:09.031"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${slider_value}</var>
+<arg>${slider_value_txt}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20240114 23:58:09.032" level="INFO">${slider_value} = 4.0</msg>
+<status status="PASS" starttime="20240114 23:58:09.031" endtime="20240114 23:58:09.032"/>
+</kw>
+<msg timestamp="20240114 23:58:09.032" level="INFO">${slider_value} = 4.0</msg>
+<status status="PASS" starttime="20240114 23:58:08.796" endtime="20240114 23:58:09.032"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:08.689" endtime="20240114 23:58:09.032"/>
+</iter>
+<iter>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 23:58:09.034" level="INFO">Sending key(s) ('RIGHT',) to page.</msg>
+<msg timestamp="20240114 23:58:09.034" level="INFO">Pressing special key RIGHT to browser.</msg>
+<msg timestamp="20240114 23:58:09.034" level="INFO">Releasing special key RIGHT.</msg>
+<status status="PASS" starttime="20240114 23:58:09.033" endtime="20240114 23:58:09.142"/>
+</kw>
+<kw name="Get Slider text" library="common-function">
+<var>${slider_value}</var>
+<arg>xpath=//span[@id='range']</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${slider_value_txt}</var>
+<arg>${element_path}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240114 23:58:09.376" level="INFO">${slider_value_txt} = 4.5</msg>
+<status status="PASS" starttime="20240114 23:58:09.143" endtime="20240114 23:58:09.376"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${slider_value}</var>
+<arg>${slider_value_txt}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20240114 23:58:09.377" level="INFO">${slider_value} = 4.5</msg>
+<status status="PASS" starttime="20240114 23:58:09.377" endtime="20240114 23:58:09.377"/>
+</kw>
+<msg timestamp="20240114 23:58:09.377" level="INFO">${slider_value} = 4.5</msg>
+<status status="PASS" starttime="20240114 23:58:09.142" endtime="20240114 23:58:09.378"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:09.032" endtime="20240114 23:58:09.378"/>
+</iter>
+<iter>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>None</arg>
+<arg>RIGHT</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20240114 23:58:09.379" level="INFO">Sending key(s) ('RIGHT',) to page.</msg>
+<msg timestamp="20240114 23:58:09.379" level="INFO">Pressing special key RIGHT to browser.</msg>
+<msg timestamp="20240114 23:58:09.379" level="INFO">Releasing special key RIGHT.</msg>
+<status status="PASS" starttime="20240114 23:58:09.378" endtime="20240114 23:58:09.490"/>
+</kw>
+<kw name="Get Slider text" library="common-function">
+<var>${slider_value}</var>
+<arg>xpath=//span[@id='range']</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${slider_value_txt}</var>
+<arg>${element_path}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240114 23:58:09.727" level="INFO">${slider_value_txt} = 5</msg>
+<status status="PASS" starttime="20240114 23:58:09.491" endtime="20240114 23:58:09.727"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${slider_value}</var>
+<arg>${slider_value_txt}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20240114 23:58:09.728" level="INFO">${slider_value} = 5.0</msg>
+<status status="PASS" starttime="20240114 23:58:09.728" endtime="20240114 23:58:09.728"/>
+</kw>
+<msg timestamp="20240114 23:58:09.728" level="INFO">${slider_value} = 5.0</msg>
+<status status="PASS" starttime="20240114 23:58:09.491" endtime="20240114 23:58:09.728"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:09.378" endtime="20240114 23:58:09.728"/>
+</iter>
+<status status="PASS" starttime="20240114 23:58:06.253" endtime="20240114 23:58:09.728"/>
+</while>
+<status status="PASS" starttime="20240114 23:58:00.871" endtime="20240114 23:58:09.729"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240114 23:58:09.729" endtime="20240114 23:58:09.882"/>
+</kw>
+<status status="PASS" starttime="20240114 23:57:59.773" endtime="20240114 23:58:09.882"/>
+</suite>
+<suite id="s1-s7" name="Infinite-Scroll" source="/home/lakshman_k/rftest/robot_Assignment/assignment5/infinite-scroll.robot">
+<kw name="Browser Setup" library="common-function" type="SETUP">
+<kw name="Evaluate" library="BuiltIn">
+<var>${dc}</var>
+<arg>sys.modules['selenium.webdriver'].DesiredCapabilities()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240114 23:58:09.887" level="INFO">${dc} = &lt;selenium.webdriver.common.desired_capabilities.DesiredCapabilities object at 0x7fb8d5d79750&gt;</msg>
+<status status="PASS" starttime="20240114 23:58:09.887" endtime="20240114 23:58:09.887"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240114 23:58:09.887" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7fb8d5d79270&gt;</msg>
+<status status="PASS" starttime="20240114 23:58:09.887" endtime="20240114 23:58:09.887"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--enable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:58:09.887" endtime="20240114 23:58:09.887"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--window-size\=1360,768</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:58:09.887" endtime="20240114 23:58:09.888"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:58:09.888" endtime="20240114 23:58:09.888"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--allow-insecure-localhost</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:58:09.888" endtime="20240114 23:58:09.888"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--ignore-certificate-errors</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:58:09.888" endtime="20240114 23:58:09.888"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:58:09.888" endtime="20240114 23:58:09.888"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:58:09.888" endtime="20240114 23:58:09.888"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<var>${dc}</var>
+<arg>${chrome_options}</arg>
+<arg>to_capabilities</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20240114 23:58:09.888" level="INFO">${dc} = {'browserName': 'chrome', 'pageLoadStrategy': 'normal', 'goog:chromeOptions': {'extensions': [], 'args': ['--enable-notifications', '--window-size=1360,768', '--start-maximized', '--allow-insecure-loc...</msg>
+<status status="PASS" starttime="20240114 23:58:09.888" endtime="20240114 23:58:09.888"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${selenoid_args}</var>
+<arg>enableVNC=${True}</arg>
+<arg>name=${SUITE NAME}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20240114 23:58:09.889" level="INFO">${selenoid_args} = {'enableVNC': True, 'name': 'Assignment5.Infinite-Scroll'}</msg>
+<status status="PASS" starttime="20240114 23:58:09.889" endtime="20240114 23:58:09.889"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dc}</arg>
+<arg>selenoid:options</arg>
+<arg>${selenoid_args}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20240114 23:58:09.889" endtime="20240114 23:58:09.889"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${dc}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240114 23:58:09.889" level="INFO">{'browserName': 'chrome', 'pageLoadStrategy': 'normal', 'goog:chromeOptions': {'extensions': [], 'args': ['--enable-notifications', '--window-size=1360,768', '--start-maximized', '--allow-insecure-localhost', '--ignore-certificate-errors', '--no-sandbox', '--disable-dev-shm-usage']}, 'selenoid:options': {'enableVNC': True, 'name': 'Assignment5.Infinite-Scroll'}}</msg>
+<status status="PASS" starttime="20240114 23:58:09.889" endtime="20240114 23:58:09.889"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Remote</arg>
+<arg>command_executor=http://${hub_url}:4444/wd/hub</arg>
+<arg>desired_capabilities=${dc}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20240114 23:58:09.889" level="INFO">Creating an instance of the Remote WebDriver.</msg>
+<status status="PASS" starttime="20240114 23:58:09.889" endtime="20240114 23:58:10.729"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20240114 23:58:10.729" endtime="20240114 23:58:10.729"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Maximize Browser Window</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240114 23:58:10.729" endtime="20240114 23:58:10.935"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:10.729" endtime="20240114 23:58:10.935"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:09.886" endtime="20240114 23:58:10.935"/>
+</kw>
+<test id="s1-s7-t1" name="Scroll the Page 10 Times" line="12">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240114 23:58:10.937" level="INFO">Opening url 'https://the-internet.herokuapp.com/infinite_scroll'</msg>
+<status status="PASS" starttime="20240114 23:58:10.936" endtime="20240114 23:58:14.647"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${counter}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240114 23:58:14.648" level="INFO">${counter} = 1</msg>
+<status status="PASS" starttime="20240114 23:58:14.648" endtime="20240114 23:58:14.648"/>
+</kw>
+<while condition="${counter} &lt; 11">
+<iter>
+<kw name="Scroll Page Down" library="common-function">
+<arg>500</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(0, ${pixels});</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240114 23:58:14.651" level="INFO">Executing JavaScript:
+window.scrollBy(0, 500);
+Without any arguments.</msg>
+<status status="PASS" starttime="20240114 23:58:14.650" endtime="20240114 23:58:14.763"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:14.649" endtime="20240114 23:58:14.763"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20s</arg>
+<arg>1s</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='jscroll-added'] [${counter}]</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>xpath=//div[@class='jscroll-added'] [${counter}]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240114 23:58:15.015" level="INFO">Element 'xpath=//div[@class='jscroll-added'] [1]' is displayed.</msg>
+<status status="PASS" starttime="20240114 23:58:14.764" endtime="20240114 23:58:15.015"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:14.763" endtime="20240114 23:58:15.016"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240114 23:58:15.016" level="INFO">${counter} = 2</msg>
+<status status="PASS" starttime="20240114 23:58:15.016" endtime="20240114 23:58:15.017"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:14.648" endtime="20240114 23:58:15.017"/>
+</iter>
+<iter>
+<kw name="Scroll Page Down" library="common-function">
+<arg>500</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(0, ${pixels});</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240114 23:58:15.020" level="INFO">Executing JavaScript:
+window.scrollBy(0, 500);
+Without any arguments.</msg>
+<status status="PASS" starttime="20240114 23:58:15.018" endtime="20240114 23:58:15.132"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:15.017" endtime="20240114 23:58:15.132"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20s</arg>
+<arg>1s</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='jscroll-added'] [${counter}]</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>xpath=//div[@class='jscroll-added'] [${counter}]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240114 23:58:15.381" level="INFO">Element 'xpath=//div[@class='jscroll-added'] [2]' is displayed.</msg>
+<status status="PASS" starttime="20240114 23:58:15.133" endtime="20240114 23:58:15.381"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:15.132" endtime="20240114 23:58:15.381"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240114 23:58:15.382" level="INFO">${counter} = 3</msg>
+<status status="PASS" starttime="20240114 23:58:15.381" endtime="20240114 23:58:15.382"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:15.017" endtime="20240114 23:58:15.382"/>
+</iter>
+<iter>
+<kw name="Scroll Page Down" library="common-function">
+<arg>500</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(0, ${pixels});</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240114 23:58:15.384" level="INFO">Executing JavaScript:
+window.scrollBy(0, 500);
+Without any arguments.</msg>
+<status status="PASS" starttime="20240114 23:58:15.383" endtime="20240114 23:58:15.498"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:15.382" endtime="20240114 23:58:15.498"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20s</arg>
+<arg>1s</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='jscroll-added'] [${counter}]</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>xpath=//div[@class='jscroll-added'] [${counter}]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240114 23:58:15.744" level="INFO">Element 'xpath=//div[@class='jscroll-added'] [3]' is displayed.</msg>
+<status status="PASS" starttime="20240114 23:58:15.499" endtime="20240114 23:58:15.744"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:15.498" endtime="20240114 23:58:15.744"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240114 23:58:15.745" level="INFO">${counter} = 4</msg>
+<status status="PASS" starttime="20240114 23:58:15.745" endtime="20240114 23:58:15.745"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:15.382" endtime="20240114 23:58:15.745"/>
+</iter>
+<iter>
+<kw name="Scroll Page Down" library="common-function">
+<arg>500</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(0, ${pixels});</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240114 23:58:15.747" level="INFO">Executing JavaScript:
+window.scrollBy(0, 500);
+Without any arguments.</msg>
+<status status="PASS" starttime="20240114 23:58:15.746" endtime="20240114 23:58:15.857"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:15.746" endtime="20240114 23:58:15.857"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20s</arg>
+<arg>1s</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='jscroll-added'] [${counter}]</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>xpath=//div[@class='jscroll-added'] [${counter}]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240114 23:58:16.103" level="INFO">Element 'xpath=//div[@class='jscroll-added'] [4]' is displayed.</msg>
+<status status="PASS" starttime="20240114 23:58:15.858" endtime="20240114 23:58:16.103"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:15.857" endtime="20240114 23:58:16.103"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240114 23:58:16.103" level="INFO">${counter} = 5</msg>
+<status status="PASS" starttime="20240114 23:58:16.103" endtime="20240114 23:58:16.103"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:15.745" endtime="20240114 23:58:16.103"/>
+</iter>
+<iter>
+<kw name="Scroll Page Down" library="common-function">
+<arg>500</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(0, ${pixels});</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240114 23:58:16.105" level="INFO">Executing JavaScript:
+window.scrollBy(0, 500);
+Without any arguments.</msg>
+<status status="PASS" starttime="20240114 23:58:16.104" endtime="20240114 23:58:16.218"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:16.104" endtime="20240114 23:58:16.218"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20s</arg>
+<arg>1s</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='jscroll-added'] [${counter}]</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>xpath=//div[@class='jscroll-added'] [${counter}]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240114 23:58:16.462" level="INFO">Element 'xpath=//div[@class='jscroll-added'] [5]' is displayed.</msg>
+<status status="PASS" starttime="20240114 23:58:16.219" endtime="20240114 23:58:16.462"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:16.219" endtime="20240114 23:58:16.462"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240114 23:58:16.463" level="INFO">${counter} = 6</msg>
+<status status="PASS" starttime="20240114 23:58:16.463" endtime="20240114 23:58:16.463"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:16.103" endtime="20240114 23:58:16.463"/>
+</iter>
+<iter>
+<kw name="Scroll Page Down" library="common-function">
+<arg>500</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(0, ${pixels});</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240114 23:58:16.464" level="INFO">Executing JavaScript:
+window.scrollBy(0, 500);
+Without any arguments.</msg>
+<status status="PASS" starttime="20240114 23:58:16.463" endtime="20240114 23:58:16.569"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:16.463" endtime="20240114 23:58:16.569"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20s</arg>
+<arg>1s</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='jscroll-added'] [${counter}]</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>xpath=//div[@class='jscroll-added'] [${counter}]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240114 23:58:16.816" level="INFO">Element 'xpath=//div[@class='jscroll-added'] [6]' is displayed.</msg>
+<status status="PASS" starttime="20240114 23:58:16.570" endtime="20240114 23:58:16.816"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:16.569" endtime="20240114 23:58:16.816"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240114 23:58:16.817" level="INFO">${counter} = 7</msg>
+<status status="PASS" starttime="20240114 23:58:16.816" endtime="20240114 23:58:16.817"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:16.463" endtime="20240114 23:58:16.817"/>
+</iter>
+<iter>
+<kw name="Scroll Page Down" library="common-function">
+<arg>500</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(0, ${pixels});</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240114 23:58:16.820" level="INFO">Executing JavaScript:
+window.scrollBy(0, 500);
+Without any arguments.</msg>
+<status status="PASS" starttime="20240114 23:58:16.818" endtime="20240114 23:58:16.934"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:16.817" endtime="20240114 23:58:16.935"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20s</arg>
+<arg>1s</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='jscroll-added'] [${counter}]</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>xpath=//div[@class='jscroll-added'] [${counter}]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240114 23:58:17.178" level="INFO">Element 'xpath=//div[@class='jscroll-added'] [7]' is displayed.</msg>
+<status status="PASS" starttime="20240114 23:58:16.936" endtime="20240114 23:58:17.178"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:16.935" endtime="20240114 23:58:17.178"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240114 23:58:17.179" level="INFO">${counter} = 8</msg>
+<status status="PASS" starttime="20240114 23:58:17.178" endtime="20240114 23:58:17.179"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:16.817" endtime="20240114 23:58:17.179"/>
+</iter>
+<iter>
+<kw name="Scroll Page Down" library="common-function">
+<arg>500</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(0, ${pixels});</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240114 23:58:17.181" level="INFO">Executing JavaScript:
+window.scrollBy(0, 500);
+Without any arguments.</msg>
+<status status="PASS" starttime="20240114 23:58:17.180" endtime="20240114 23:58:17.291"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:17.180" endtime="20240114 23:58:17.292"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20s</arg>
+<arg>1s</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='jscroll-added'] [${counter}]</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>xpath=//div[@class='jscroll-added'] [${counter}]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240114 23:58:17.532" level="INFO">Element 'xpath=//div[@class='jscroll-added'] [8]' is displayed.</msg>
+<status status="PASS" starttime="20240114 23:58:17.293" endtime="20240114 23:58:17.533"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:17.292" endtime="20240114 23:58:17.533"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240114 23:58:17.534" level="INFO">${counter} = 9</msg>
+<status status="PASS" starttime="20240114 23:58:17.533" endtime="20240114 23:58:17.534"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:17.179" endtime="20240114 23:58:17.534"/>
+</iter>
+<iter>
+<kw name="Scroll Page Down" library="common-function">
+<arg>500</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(0, ${pixels});</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240114 23:58:17.536" level="INFO">Executing JavaScript:
+window.scrollBy(0, 500);
+Without any arguments.</msg>
+<status status="PASS" starttime="20240114 23:58:17.535" endtime="20240114 23:58:17.651"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:17.534" endtime="20240114 23:58:17.652"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20s</arg>
+<arg>1s</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='jscroll-added'] [${counter}]</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>xpath=//div[@class='jscroll-added'] [${counter}]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240114 23:58:17.890" level="INFO">Element 'xpath=//div[@class='jscroll-added'] [9]' is displayed.</msg>
+<status status="PASS" starttime="20240114 23:58:17.652" endtime="20240114 23:58:17.890"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:17.652" endtime="20240114 23:58:17.891"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240114 23:58:17.892" level="INFO">${counter} = 10</msg>
+<status status="PASS" starttime="20240114 23:58:17.891" endtime="20240114 23:58:17.892"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:17.534" endtime="20240114 23:58:17.892"/>
+</iter>
+<iter>
+<kw name="Scroll Page Down" library="common-function">
+<arg>500</arg>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollBy(0, ${pixels});</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240114 23:58:17.894" level="INFO">Executing JavaScript:
+window.scrollBy(0, 500);
+Without any arguments.</msg>
+<status status="PASS" starttime="20240114 23:58:17.893" endtime="20240114 23:58:18.003"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:17.892" endtime="20240114 23:58:18.003"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20s</arg>
+<arg>1s</arg>
+<arg>Element Should Be Visible</arg>
+<arg>xpath=//div[@class='jscroll-added'] [${counter}]</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>xpath=//div[@class='jscroll-added'] [${counter}]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20240114 23:58:18.245" level="INFO">Element 'xpath=//div[@class='jscroll-added'] [10]' is displayed.</msg>
+<status status="PASS" starttime="20240114 23:58:18.004" endtime="20240114 23:58:18.246"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:18.004" endtime="20240114 23:58:18.246"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${counter}</var>
+<arg>${counter}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240114 23:58:18.247" level="INFO">${counter} = 11</msg>
+<status status="PASS" starttime="20240114 23:58:18.246" endtime="20240114 23:58:18.247"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:17.892" endtime="20240114 23:58:18.247"/>
+</iter>
+<status status="PASS" starttime="20240114 23:58:14.648" endtime="20240114 23:58:18.247"/>
+</while>
+<status status="PASS" starttime="20240114 23:58:10.935" endtime="20240114 23:58:18.247"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240114 23:58:18.248" endtime="20240114 23:58:18.404"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:09.883" endtime="20240114 23:58:18.404"/>
+</suite>
+<suite id="s1-s8" name="WYSIWYG-Editor" source="/home/lakshman_k/rftest/robot_Assignment/assignment5/WYSIWYG-Editor.robot">
+<kw name="Browser Setup" library="common-function" type="SETUP">
+<kw name="Evaluate" library="BuiltIn">
+<var>${dc}</var>
+<arg>sys.modules['selenium.webdriver'].DesiredCapabilities()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240114 23:58:18.418" level="INFO">${dc} = &lt;selenium.webdriver.common.desired_capabilities.DesiredCapabilities object at 0x7fb8d5d7b6d0&gt;</msg>
+<status status="PASS" starttime="20240114 23:58:18.417" endtime="20240114 23:58:18.418"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240114 23:58:18.418" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7fb8d5d7a5c0&gt;</msg>
+<status status="PASS" starttime="20240114 23:58:18.418" endtime="20240114 23:58:18.419"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--enable-notifications</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:58:18.419" endtime="20240114 23:58:18.419"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--window-size\=1360,768</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:58:18.419" endtime="20240114 23:58:18.420"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--start-maximized</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:58:18.420" endtime="20240114 23:58:18.420"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--allow-insecure-localhost</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:58:18.420" endtime="20240114 23:58:18.420"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--ignore-certificate-errors</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:58:18.420" endtime="20240114 23:58:18.421"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:58:18.421" endtime="20240114 23:58:18.421"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20240114 23:58:18.421" endtime="20240114 23:58:18.421"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<var>${dc}</var>
+<arg>${chrome_options}</arg>
+<arg>to_capabilities</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<msg timestamp="20240114 23:58:18.421" level="INFO">${dc} = {'browserName': 'chrome', 'pageLoadStrategy': 'normal', 'goog:chromeOptions': {'extensions': [], 'args': ['--enable-notifications', '--window-size=1360,768', '--start-maximized', '--allow-insecure-loc...</msg>
+<status status="PASS" starttime="20240114 23:58:18.421" endtime="20240114 23:58:18.421"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${selenoid_args}</var>
+<arg>enableVNC=${True}</arg>
+<arg>name=${SUITE NAME}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20240114 23:58:18.422" level="INFO">${selenoid_args} = {'enableVNC': True, 'name': 'Assignment5.WYSIWYG-Editor'}</msg>
+<status status="PASS" starttime="20240114 23:58:18.422" endtime="20240114 23:58:18.422"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dc}</arg>
+<arg>selenoid:options</arg>
+<arg>${selenoid_args}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20240114 23:58:18.422" endtime="20240114 23:58:18.422"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${dc}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240114 23:58:18.423" level="INFO">{'browserName': 'chrome', 'pageLoadStrategy': 'normal', 'goog:chromeOptions': {'extensions': [], 'args': ['--enable-notifications', '--window-size=1360,768', '--start-maximized', '--allow-insecure-localhost', '--ignore-certificate-errors', '--no-sandbox', '--disable-dev-shm-usage']}, 'selenoid:options': {'enableVNC': True, 'name': 'Assignment5.WYSIWYG-Editor'}}</msg>
+<status status="PASS" starttime="20240114 23:58:18.423" endtime="20240114 23:58:18.423"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Remote</arg>
+<arg>command_executor=http://${hub_url}:4444/wd/hub</arg>
+<arg>desired_capabilities=${dc}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20240114 23:58:18.424" level="INFO">Creating an instance of the Remote WebDriver.</msg>
+<status status="PASS" starttime="20240114 23:58:18.423" endtime="20240114 23:58:19.258"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20240114 23:58:19.258" endtime="20240114 23:58:19.259"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Maximize Browser Window</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240114 23:58:19.259" endtime="20240114 23:58:19.464"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:19.259" endtime="20240114 23:58:19.464"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:18.416" endtime="20240114 23:58:19.464"/>
+</kw>
+<test id="s1-s8-t1" name="Replace text with Al rules" line="11">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240114 23:58:19.465" level="INFO">Opening url 'https://the-internet.herokuapp.com/tinymce'</msg>
+<status status="PASS" starttime="20240114 23:58:19.465" endtime="20240114 23:58:26.895"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>id=mce_0_ifr</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20240114 23:58:26.897" level="INFO">Selecting frame 'id=mce_0_ifr'.</msg>
+<status status="PASS" starttime="20240114 23:58:26.896" endtime="20240114 23:58:27.152"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.body.innerHTML = ''</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240114 23:58:27.154" level="INFO">Executing JavaScript:
+document.body.innerHTML = ''
+Without any arguments.</msg>
+<status status="PASS" starttime="20240114 23:58:27.152" endtime="20240114 23:58:27.267"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.body.innerHTML += 'AI Rules'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20240114 23:58:27.268" level="INFO">Executing JavaScript:
+document.body.innerHTML += 'AI Rules'
+Without any arguments.</msg>
+<status status="PASS" starttime="20240114 23:58:27.267" endtime="20240114 23:58:27.380"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:19.464" endtime="20240114 23:58:27.381"/>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20240114 23:58:27.382" endtime="20240114 23:58:27.536"/>
+</kw>
+<status status="PASS" starttime="20240114 23:58:18.406" endtime="20240114 23:58:27.536"/>
+</suite>
+<status status="FAIL" starttime="20240114 23:57:08.172" endtime="20240114 23:58:27.539"/>
+</suite>
+<statistics>
+<total>
+<stat pass="8" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="8" fail="1" skip="0" id="s1" name="Assignment5">Assignment5</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Broken-Images">Assignment5.Broken-Images</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2" name="Data Tables">Assignment5.Data Tables</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s3" name="Disappearing-Elements">Assignment5.Disappearing-Elements</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s4" name="Dynamic-Controls">Assignment5.Dynamic-Controls</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s5" name="Dynamically-Loaded-Page-Elements">Assignment5.Dynamically-Loaded-Page-Elements</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s6" name="Horozontal-Slider">Assignment5.Horozontal-Slider</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s7" name="Infinite-Scroll">Assignment5.Infinite-Scroll</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s8" name="WYSIWYG-Editor">Assignment5.WYSIWYG-Editor</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
