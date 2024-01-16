@@ -3,10 +3,13 @@ Library    SeleniumLibrary
 Library    BuiltIn
 Library    Collections
 Library    RequestsLibrary
+Library    ${CURDIR}/../py_resource/create_addrows.py
+
 
 *** Variables ***
 ${hub_url}    127.0.0.1
 ${GLOBAL_TIMEOUT}    20s
+${xls-file}    ${CURDIR}${/}../data_folder/iphonedata.xlsx
 
 *** Keywords ***
 Browser Setup
@@ -42,3 +45,11 @@ Wait Until element is displayed
     [Arguments]    ${xpath}
     Wait Until Element Is Visible    ${xpath}    20s
 
+Iterate Through All Elements And SAVE In xls
+    [Arguments]    ${sheet_name}    ${elements_length}    ${element_name}    ${element_price}    ${element_rating}
+    FOR    ${element_index}    IN RANGE    1   ${elements_length}
+        ${element_name_text}    Get Text    ${element_name} [${element_index}]
+        ${element_price_text}    Get Text    ${element_price} [${element_index}]
+        ${element_rating_text}    Get Text    ${element_rating} [${element_index}]
+        append rows    ${xls-file}    ${sheet_name}    ${element_name_text}    ${element_price_text}    ${element_rating_text}
+    END
